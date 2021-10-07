@@ -2,10 +2,10 @@ package logic;
 
 public class Palabra {
 
-	 char letra ;
-	 String definicion;
-	 int codigo, cantidadRespondida, cantidadRespondidaCrrectamente; 
-	 boolean empiezaPor, estadoUso;
+	 private char letra ;
+	 private String definicion;
+	 private int codigo, cantidadRespondida, cantidadRespondidaCrrectamente; 
+	 private boolean empiezaPor, estadoUso;
 	 
 	 public Palabra(char letra, String definicion, int codigo, int cantidadRespondida, int cantidadRespondidaCrrectamente,
 	        boolean empiezaPor, boolean estadoUso) {
@@ -74,7 +74,5 @@ public class Palabra {
 	public void setEstadoUso(boolean estadoUso) {
 	    this.estadoUso = estadoUso;
 	}
-	 
-	 
 	 
 	}
