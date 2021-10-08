@@ -50,12 +50,13 @@
             <p>Planta grande</p>
         </div>
         <div class="respuesta">
-            <input class="input" type="text" placeholder="RESPUESTA">
-            <button class="enviar" type="submit">ENVIAR</button>
+            <input class="input" id="respIngresada" name="respuesta" type="text" placeholder="RESPUESTA" autofocus>
+            <button class="enviar" type="submit" onclick="submitForm()">enviar</button>
+            <button class="siguiente" onclick="siguiente()">pasapalabra</button>
         </div>
 
     </div>
 </body>
-<script src="./script.js"></script>
+<script type="text/javascript" src="./script.js"></script>
 
 </html>
