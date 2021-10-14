@@ -4,17 +4,17 @@ public class Palabra {
 
 	 private char letra ;
 	 private String definicion;
-	 private int codigo, cantidadRespondida, cantidadRespondidaCrrectamente; 
+	 private int codigo, cantidadRespondida, cantidadRespondidaCorrectamente; 
 	 private boolean empiezaPor, estadoUso;
 	 
-	 public Palabra(char letra, String definicion, int codigo, int cantidadRespondida, int cantidadRespondidaCrrectamente,
+	 public Palabra(char letra, String definicion, int codigo, int cantidadRespondida, int cantidadRespondidaCorrectamente,
 	        boolean empiezaPor, boolean estadoUso) {
 	    super();
 	    this.letra = letra;
 	    this.definicion = definicion;
 	    this.codigo = codigo;
 	    this.cantidadRespondida = cantidadRespondida;
-	    this.cantidadRespondidaCrrectamente = cantidadRespondidaCrrectamente;
+	    this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
 	    this.empiezaPor = empiezaPor;
 	    this.estadoUso = estadoUso;
 	}
@@ -51,12 +51,12 @@ public class Palabra {
 	    this.cantidadRespondida = cantidadRespondida;
 	}
 
-	public int getCantidadRespondidaCrrectamente() {
-	    return cantidadRespondidaCrrectamente;
+	public int getCantidadRespondidaCorrectamente() {
+	    return cantidadRespondidaCorrectamente;
 	}
 
-	public void setCantidadRespondidaCrrectamente(int cantidadRespondidaCrrectamente) {
-	    this.cantidadRespondidaCrrectamente = cantidadRespondidaCrrectamente;
+	public void setCantidadRespondidaCorrectamente(int cantidadRespondidaCorrectamente) {
+	    this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
 	}
 
 	public boolean isEmpiezaPor() {

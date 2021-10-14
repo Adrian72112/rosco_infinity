@@ -5,12 +5,13 @@ public class Usuario {
 	private int ci, pin;
 	private String nombre, apellido, mail;
 	
-	public Usuario(int ci, int pin, String nombre, String apellido, String mail) {
+	public Usuario(int ci, String nombre, String apellido, String mail, int pin) {
+		super();
 		this.ci = ci;
-		this.pin = pin;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.mail = mail;
+		this.pin = pin;
 	}
 
 	public int getCi() {

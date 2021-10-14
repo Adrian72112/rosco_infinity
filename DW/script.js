@@ -1,30 +1,6 @@
-const diccionario = [{
-        letra: 'a',
-        desc: 'Planta grande',
-        respuesta: 'ARBOL',
-        contiene: false,
-    },
-    {
-        letra: 'b',
-        desc: 'Animal que aparece en shrek',
-        respuesta: 'BURRO',
-        contiene: false,
-    },
-    {
-        letra: 'c',
-        desc: 'ANIMAL DEL DESIERTO',
-        respuesta: 'CAMELLO',
-        contiene: false,
-    },
-    {
-        letra: 'd',
-        desc: 'Reptil extinto',
-        respuesta: 'DINOSAURIO',
-        contiene: false,
-    }
-];
+import { diccionario } from './diccionario.js';
 
-
+// Con la tecla enter envia la respuesta
 document.onkeyup = enter;
 
 function enter(e) {
@@ -33,11 +9,17 @@ function enter(e) {
     }
 }
 
+//instanciar variables
+let arrayRespuestas = []
+var posicion, respuesta, respCorrecta, respIngresada;
+
+
 function submitForm(respuesta) {
-    var respuesta = document.getElementById('respIngresada').value.toUpperCase();
+    respuesta = document.getElementById('respIngresada').value.toUpperCase();
     document.getElementById('respIngresada').value = ""
 
     if (respIngresada === respCorrecta) {
+
         arrayRespuestas.push(1);
     } else {
 
@@ -57,5 +39,3 @@ function siguiente(respuesta) {
 // 0 = incorrecta
 // 1 = correcta
 // 2 = pasapalabra
-
-let arrayRespuestas = []

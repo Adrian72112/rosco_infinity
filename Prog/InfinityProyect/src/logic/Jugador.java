@@ -5,9 +5,9 @@ public class Jugador extends Usuario {
 	private String nickname;
 	private int partidasJugadas,partidasGanadas;
 	
-	public Jugador(int ci, int pin, String nombre, String apellido, String mail, String nickname, int partidasJugadas,
+	public Jugador(int ci, String nombre, String apellido, String mail, int pin, String nickname, int partidasJugadas,
 			int partidasGanadas) {
-		super(ci, pin, nombre, apellido, mail);
+		super(ci, nombre, apellido, mail, pin);
 		this.nickname = nickname;
 		this.partidasJugadas = partidasJugadas;
 		this.partidasGanadas = partidasGanadas;
