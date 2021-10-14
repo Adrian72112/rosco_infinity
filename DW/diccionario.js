@@ -21,5 +21,6 @@ export const diccionario = [{
         desc: 'Reptil extinto',
         respuesta: 'DINOSAURIO',
         contiene: false,
+
     }
 ];
