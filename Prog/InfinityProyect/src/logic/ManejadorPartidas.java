@@ -18,6 +18,9 @@ public class ManejadorPartidas {
 	// 	Caso 3: el nickname existe y el pin es correcto. Salta al caso default.
 	//	Default: El sistema crea y devuelve una partida con 25 palabras (que pueden ser sobre una categoría o aleatorias) con un código de
 	// 	partida único.
+		
+		
+		
 	}
 	
 	public void /*Partida*/ nuevaPartida(String nickname, int pin, String categoria) {

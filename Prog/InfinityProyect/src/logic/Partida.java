@@ -5,6 +5,10 @@ public class Partida {
 	private int codigo, puntaje;
 	private String nickname;
 	private boolean finalizada;
+	
+	private Palabra[] palabras = new Palabra[25];
+	private Jugador jugador;
+	
 	public Partida(int codigo, int puntaje, String nickname, boolean finalizada) {
 		super();
 		this.codigo = codigo;

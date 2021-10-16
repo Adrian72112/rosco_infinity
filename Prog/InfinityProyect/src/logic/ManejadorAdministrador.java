@@ -10,9 +10,10 @@ public class ManejadorAdministrador {
 		this.usuarios = new ArrayList<Usuario>();
 	}
 	
-	
+	//Métodos
 	public void crearAdministrador (int ci, String nombre, String apellido, String mail, int pin, int ciA, int pinA ) {
-		Usuario admin = new Administrador(ci, nombre, apellido, mail, pin); //se crea un nuevo adm. ciA y pinA es parte del adm que está creando al nuevo adm
+		Usuario admin = new Administrador(ci, nombre, apellido, mail, pin); 
+		//se crea un nuevo adm. ciA y pinA es parte del adm que está creando al nuevo adm
 		this.usuarios.add(admin);
 	}
 	
@@ -20,7 +21,9 @@ public class ManejadorAdministrador {
 		int aux = -1;
 		
 		for(int i = 0; i < this.usuarios.size(); i++) { //recorre los usuarios que existen
-			if(this.usuarios.get(i).getCi() == ci) { //dentro del array de usuarios, pide la ci del i y la compara con la que ingresó el adm. si es así, la variable aux será positiva
+			if(this.usuarios.get(i).getCi() == ci) { 
+				//dentro del array de usuarios, pide la ci del i y la compara con la que ingresó el adm. 
+				//si es así, la variable aux será positiva
 				aux = i;
 			}
 		}

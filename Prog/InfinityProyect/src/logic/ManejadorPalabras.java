@@ -18,10 +18,10 @@ public class ManejadorPalabras {
 	//	puede ser único.
 		
 		
-		//public Palabra(char letra, String definicion, int codigo, int cantidadRespondida, int cantidadRespondidaCorrectamente, boolean empiezaPor, boolean estadoUso)
 		
 		//Palabra pal = new Palabra(letra, definicion, empiezaPor);
 		//this.palabras.add(pal);
+		
 	}
 	
 	public void eliminarPalabra(int codigo) {
