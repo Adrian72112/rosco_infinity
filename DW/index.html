@@ -14,53 +14,78 @@
 </head>
 
 <body>
-    <div class="outer-circle">
-        <div style="left: 275px; top: 27px;" class="inner-circle letter">A</div>
-        <div style="left: 337px; top: 34px;" class="inner-circle letter">B</div>
-        <div style="left: 395px; top: 58px;" class="inner-circle letter">C</div>
-        <div style="left: 445px; top: 94px;" class="inner-circle letter">D</div>
-        <div style="left: 485px; top: 142px;" class="inner-circle letter">E</div>
-        <div style="left: 510px; top: 198px;" class="inner-circle letter">F</div>
-        <div style="left: 522px; top: 259px;" class="inner-circle letter">G</div>
-        <div style="left: 518px; top: 321px;" class="inner-circle letter">H</div>
-        <div style="left: 499px; top: 380px;" class="inner-circle letter">I</div>
-        <div style="left: 466px; top: 433px;" class="inner-circle letter">J</div>
-        <div style="left: 420px; top: 475px;" class="inner-circle letter">L</div>
-        <div style="left: 366px; top: 505px;" class="inner-circle letter">M</div>
-        <div style="left: 306px; top: 520px;" class="inner-circle letter">N</div>
-        <div style="left: 244px; top: 521px;" class="inner-circle letter">Ñ</div>
-        <div style="left: 183px; top: 505px;" class="inner-circle letter">O</div>
-        <div style="left: 129px; top: 475px;" class="inner-circle letter">P</div>
-        <div style="left: 84px; top: 433px;" class="inner-circle letter">Q</div>
-        <div style="left: 50px; top: 380px;" class="inner-circle letter">R</div>
-        <div style="left: 31px; top: 321px;" class="inner-circle letter">S</div>
-        <div style="left: 27px; top: 258px;" class="inner-circle letter">T</div>
-        <div style="left: 39px; top: 198px;" class="inner-circle letter">U</div>
-        <div style="left: 65px; top: 143px;" class="inner-circle letter">V</div>
-        <div style="left: 105px; top: 94px;" class="inner-circle letter">X</div>
-        <div style="left: 155px; top: 58px;" class="inner-circle letter">Y</div>
-        <div style="left: 213px; top: 35px;" class="inner-circle letter">Z</div>
+    <div class="container0">
+
+        <header>
+            <div class="logo">
+                <h2>by Infinity</h2>
+                <h1>PASAPALABRA</h1>
+            </div>
+            <div class="categoria">
+                <h3>Categoría: Economía</h3>
+            </div>
+        </header>
+
+        <div class="container1">
+            <div class="outer-circle">
+                <div style="left: 275px; top: 27px;" class="inner-circle letter">A</div>
+                <div style="left: 337px; top: 34px;" class="inner-circle letter">B</div>
+                <div style="left: 395px; top: 58px;" class="inner-circle letter">C</div>
+                <div style="left: 445px; top: 94px;" class="inner-circle letter">D</div>
+                <div style="left: 485px; top: 142px;" class="inner-circle letter">E</div>
+                <div style="left: 510px; top: 198px;" class="inner-circle letter">F</div>
+                <div style="left: 522px; top: 259px;" class="inner-circle letter">G</div>
+                <div style="left: 518px; top: 321px;" class="inner-circle letter">H</div>
+                <div style="left: 499px; top: 380px;" class="inner-circle letter">I</div>
+                <div style="left: 466px; top: 433px;" class="inner-circle letter">J</div>
+                <div style="left: 420px; top: 475px;" class="inner-circle letter">L</div>
+                <div style="left: 366px; top: 505px;" class="inner-circle letter">M</div>
+                <div style="left: 306px; top: 520px;" class="inner-circle letter">N</div>
+                <div style="left: 244px; top: 521px;" class="inner-circle letter">Ñ</div>
+                <div style="left: 183px; top: 505px;" class="inner-circle letter">O</div>
+                <div style="left: 129px; top: 475px;" class="inner-circle letter">P</div>
+                <div style="left: 84px; top: 433px;" class="inner-circle letter">Q</div>
+                <div style="left: 50px; top: 380px;" class="inner-circle letter">R</div>
+                <div style="left: 31px; top: 321px;" class="inner-circle letter">S</div>
+                <div style="left: 27px; top: 258px;" class="inner-circle letter">T</div>
+                <div style="left: 39px; top: 198px;" class="inner-circle letter">U</div>
+                <div style="left: 65px; top: 143px;" class="inner-circle letter">V</div>
+                <div style="left: 105px; top: 94px;" class="inner-circle letter">X</div>
+                <div style="left: 155px; top: 58px;" class="inner-circle letter">Y</div>
+                <div style="left: 213px; top: 35px;" class="inner-circle letter">Z</div>
+
+                <div class="interfaz">
+
+                    <div class="condicion">
+                        <p>Empieza A</p>
+                    </div>
+                    <div class="definition">
+                        <p>Planta grande</p>
+                    </div>
+                    <div class="respuesta">
+                        <input class="input" id="respIngresada" name="respuesta" type="text" placeholder="RESPUESTA" autofocus>
+                        <button class="enviar" type="submit" onclick="submitForm()">enviar</button>
+                        <button class="siguiente" onclick="siguiente()">pasapalabra</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
     </div>
 
+    <!--  
     <div class="container">
-        <div class="condicion">
-            <p>Empieza A</p>
-        </div>
-        <div class="definition">
-            <p>Planta grande</p>
-        </div>
-        <div class="respuesta">
-            <input class="input" id="respIngresada" name="respuesta" type="text" placeholder="RESPUESTA" autofocus>
-            <button class="enviar" type="submit" onclick="submitForm()">enviar</button>
-            <button class="siguiente" onclick="siguiente()">pasapalabra</button>
-        </div>
-
+       
 
         <div id="reloj">
             00 : 00 : 00
         </div>
 
     </div>
+-->
 </body>
 <script type="module" src="./diccionario.js"></script>
 <script type="module" src="./script.js"></script>

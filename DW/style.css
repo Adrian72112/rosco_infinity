@@ -1,10 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,500&display=swap');
 body {
     font-family: 'Poppins', sans-serif;
+    color: white;
     margin: 0;
-    display: flex;
-    justify-content: center;
+    background-color: #560074;
+    height: 100%;
+    margin: 1% 2%;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 5rem;
+}
+
+h1 {
+    margin: 0px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+h2 {
+    margin: 0px;
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    font-style: italic;
+    font-weight: 500;
+}
+
+h3 {
+    margin: 0px;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.container1 {
+    height: 80vh;
+    border: 2px solid white;
+    border-radius: 3.75rem;
+    margin: 0 1%;
+    position: relative;
+}
+
+.interfaz {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    top: 200px;
+    left: 150px;
+}
+
+
+/***/
 
 .outer-circle {
     margin: 0 auto;
@@ -17,12 +67,12 @@ body {
 }
 
 .inner-circle {
-    height: 50px;
-    width: 50px;
-    background: #DE81FF;
+    height: 3.125rem;
+    width: 3.125rem;
+    background: #D250FF;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
+    -moz-border-radius: 3.125rem;
+    -webkit-border-radius: 3.125rem;
     border-radius: 100%;
     position: absolute;
 }
@@ -32,15 +82,7 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bolder;
-    font-size: x-large;
-}
-
-.container {
-    position: absolute;
-    height: 300px;
-    width: 300px;
-    text-align: center;
-    top: 230px;
+    font-size: 1.5rem;
 }
 
 .input {
