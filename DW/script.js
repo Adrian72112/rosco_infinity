@@ -11,7 +11,7 @@ function enter(e) {
 
 //instanciar variables
 let arrayRespuestas = []
-var posicion, respuesta, respCorrecta, respIngresada;
+let posicion, respuesta, respCorrecta, respIngresada;
 
 
 function submitForm(respuesta) {
@@ -21,6 +21,7 @@ function submitForm(respuesta) {
     if (respIngresada === respCorrecta) {
 
         arrayRespuestas.push(1);
+
     } else {
 
     }
@@ -59,4 +60,22 @@ function actual() {
     //devolver los datos:
     mireloj = hora + " : " + minuto + " : " + segundo;
     return mireloj;
+}
+
+const btnEmpezar = document.getElementById('btnEmpezar');
+
+function toggleBtn() {
+    if (btnEmpezar.classList.contains('hide')) {
+        btnEmpezar.classList.remove('hide')
+    } else {
+        btnEmpezar.classList.add('hide')
+    }
+}
+
+function obtenerElement(name) {
+    return document.getElementById(name)
+}
+
+window.onload = function() {
+    obtenerElement('btnEmpezar').onclick = toggleBtn;
 }
