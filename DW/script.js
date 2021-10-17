@@ -23,8 +23,135 @@ const diccionario = [{
         desc: 'Reptil extinto',
         respuesta: 'DINOSAURIO',
         contiene: false,
+    },
+    {
+        letra: 'e',
+        desc: 'Construccion urbana',
+        respuesta: 'EDIFICIO',
+        contiene: false,
+    },
+    {
+        letra: 'f',
+        desc: 'Adjetivo despectivo',
+        respuesta: 'FEO',
+        contiene: false,
+    },
+    {
+        letra: 'g',
+        desc: 'Adjetivo persona obesa',
+        respuesta: 'GORDO',
+        contiene: false,
+    },
+    {
+        letra: 'h',
+        desc: 'Ponen las gallinas',
+        respuesta: 'HUEVO',
+        contiene: false,
+    },
+    {
+        letra: 'i',
+        desc: 'Reptil',
+        respuesta: 'IGUANA',
+        contiene: false,
+    },
+    {
+        letra: 'j',
+        desc: 'Tienen los niños',
+        respuesta: 'JUGUETES',
+        contiene: false,
+    },
+    {
+        letra: 'l',
+        desc: 'Material de una bufanda',
+        respuesta: 'LANA',
+        contiene: false,
+    },
+    {
+        letra: 'm',
+        desc: 'Referido a maternidad',
+        respuesta: 'MAMA',
+        contiene: false,
+    },
+    {
+        letra: 'n',
+        desc: 'Citrico y color',
+        respuesta: 'NARANJA',
+        contiene: false,
+    },
+    {
+        letra: 'ñ',
+        desc: 'Animal propio de Uruguay',
+        respuesta: 'ÑANDU',
+        contiene: false,
+    },
+    {
+        letra: 'o',
+        desc: 'Garoto es una marca de este producto',
+        respuesta: 'CHOCOLATE',
+        contiene: true,
+    },
+    {
+        letra: 'p',
+        desc: 'Ave semi acuatico',
+        respuesta: 'PATO',
+        contiene: false,
+    },
+    {
+        letra: 'q',
+        desc: 'Alimento lacteo',
+        respuesta: 'QUESO',
+        contiene: false,
+    },
+    {
+        letra: 'r',
+        desc: 'Animal que persiguen los gatos',
+        respuesta: 'RATON',
+        contiene: false,
+    },
+    {
+        letra: 's',
+        desc: 'Centro del sistema solar',
+        respuesta: 'SOL',
+        contiene: false,
+    },
+    {
+        letra: 't',
+        desc: 'Donde tomamos te',
+        respuesta: 'TAZA',
+        contiene: false,
+    },
+    {
+        letra: 'u',
+        desc: 'Herramienta para tomar sopa',
+        respuesta: 'CUCHARA',
+        contiene: true,
+    },
+    {
+        letra: 'v',
+        desc: 'Hay mucho en la rambla. Clima',
+        respuesta: 'VIENTO',
+        contiene: false,
+    },
+    {
+        letra: 'x',
+        desc: 'Instrumento',
+        respuesta: 'XILOFONO',
+        contiene: false,
+    },
+    {
+        letra: 'y',
+        desc: 'Parte de dentro del huevo',
+        respuesta: 'YEMA',
+        contiene: true,
+    },
+    {
+        letra: 'z',
+        desc: 'Calzado',
+        respuesta: 'ZAPATO',
+        contiene: false,
     }
-
+    
+    
 ];
 
 //instanciar variables
