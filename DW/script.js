@@ -1,4 +1,6 @@
 // import { diccionario } from './diccionario.js';
+let cantidadCorrecto = 0,
+    cantidadIncorrecto = 0;
 
 const diccionario = [{
         letra: 'a',
@@ -163,34 +165,38 @@ document.onkeyup = enter;
 
 function enter(e) {
     if (e.which == 13) {
-        enviarRespuesta(respuesta);
+        submitForm();
     }
 }
 
 
-function enviarRespuesta(respuesta) {
-    respuesta = document.getElementById('respIngresada').value.toUpperCase();
-    document.getElementById('respIngresada').value = ""
+// function enviarRespuesta(respuesta) {
+//     respuesta = document.getElementById('respIngresada').value.toUpperCase();
+//     document.getElementById('respIngresada').value = ""
 
-    if (respIngresada === respCorrecta) {
+//     if (respIngresada === respCorrecta) {
 
-        arrayRespuestas.push(1);
+//         arrayRespuestas.push(1);
 
-    } else {
+//     } else {
 
-    }
+//     }
 
-    console.log(respuesta, arrayRespuestas)
+//     console.log(respuesta, arrayRespuestas)
 
+// }
+
+const pasapalabra = () => {
+    ul.children[i].classList.toggle('orange');
+    siguiente();
 }
 
-function siguiente(respuesta) {
-    var respuesta = document.getElementById('respIngresada').value.toUpperCase();
-    document.getElementById('respIngresada').value = ""
-
+function siguiente() {
+    i++;
+    document.getElementById('definition__text').innerHTML = diccionario[i].desc;
+    document.getElementById('respIngresada').value = "";
+    document.getElementById('condicion__text').innerHTML = diccionario[i].contiene == false ? `Empieza con: ${diccionario[i].letra}` : `Contiene: ${diccionario[i].letra}`;
 }
-
-
 // 0 = incorrecta
 // 1 = correcta
 // 2 = pasapalabra
@@ -232,24 +238,24 @@ let i = 0;
 
 const comenzarJuego = () => {
     console.log(ul.children[i]);
-    // if
-    // if (i >= 1) {
-    //     ul.children[i - 1].classList.toggle('green');
-    // }
-
+    document.getElementById('definition__text').innerHTML = diccionario[i].desc;
 }
 
 const submitForm = () => {
-    const input = document.getElementById("respIngresada").value;
+    const input = document.getElementById("respIngresada").value.toUpperCase();;
     if (input == diccionario[i].respuesta) {
         ul.children[i].classList.toggle('green');
-        i++;
+        cantidadCorrecto++;
+        siguiente();
+        console.log('correcto :' + cantidadCorrecto)
+
     } else if (input != diccionario[i].respuesta) {
         ul.children[i].classList.toggle('red');
-        i++
+        console.log(diccionario[i].respuesta, input);
+        cantidadIncorrecto++;
+        siguiente();
+        console.log(cantidadIncorrecto)
     }
-    console.log(i)
-    console.log(diccionario[i].respuesta)
 }
 
 window.onload = function() {
