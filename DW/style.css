@@ -8,6 +8,19 @@ body {
     margin: 1% 2%;
 }
 
+#btnEmpezar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    width: 200px;
+    z-index: 1;
+}
+
+.hide {
+    visibility: hidden;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -96,3 +109,9 @@ h3 {
     justify-content: center;
     flex-direction: column;
 }
+
+#correcta {}
+
+#incorrecta {}
+
+#pasapalabra {}
