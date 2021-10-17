@@ -115,3 +115,11 @@ h3 {
 #incorrecta {}
 
 #pasapalabra {}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}

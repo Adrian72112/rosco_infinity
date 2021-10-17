@@ -1,20 +1,47 @@
-import { diccionario } from './diccionario.js';
+// import { diccionario } from './diccionario.js';
+
+const diccionario = [{
+        letra: 'a',
+        desc: 'Planta grande',
+        respuesta: 'ARBOL',
+        contiene: false,
+    },
+    {
+        letra: 'b',
+        desc: 'Animal que aparece en shrek',
+        respuesta: 'BURRO',
+        contiene: false,
+    },
+    {
+        letra: 'c',
+        desc: 'ANIMAL DEL DESIERTO',
+        respuesta: 'CAMELLO',
+        contiene: false,
+    },
+    {
+        letra: 'd',
+        desc: 'Reptil extinto',
+        respuesta: 'DINOSAURIO',
+        contiene: false,
+    }
+
+];
+
+//instanciar variables
+let arrayRespuestas = []
+let posicion, respuesta, respCorrecta, respIngresada;
 
 // Con la tecla enter envia la respuesta
 document.onkeyup = enter;
 
 function enter(e) {
     if (e.which == 13) {
-        submitForm();
+        enviarRespuesta(respuesta);
     }
 }
 
-//instanciar variables
-let arrayRespuestas = []
-let posicion, respuesta, respCorrecta, respIngresada;
 
-
-function submitForm(respuesta) {
+function enviarRespuesta(respuesta) {
     respuesta = document.getElementById('respIngresada').value.toUpperCase();
     document.getElementById('respIngresada').value = ""
 
@@ -43,7 +70,7 @@ function siguiente(respuesta) {
 
 //RELOJ
 
-function actual() {
+function reloj() {
     fecha = new Date(); //Actualizar fecha.
     hora = fecha.getHours(); //hora actual
     minuto = fecha.getMinutes(); //minuto actual
@@ -72,10 +99,33 @@ function toggleBtn() {
     }
 }
 
-function obtenerElement(name) {
-    return document.getElementById(name)
+const ul = document.getElementById('lista');
+
+let i = 0;
+
+const comenzarJuego = () => {
+    console.log(ul.children[i]);
+    // if
+    // if (i >= 1) {
+    //     ul.children[i - 1].classList.toggle('green');
+    // }
+
+}
+
+const submitForm = () => {
+    const input = document.getElementById("respIngresada").value;
+    if (input == diccionario[i].respuesta) {
+        ul.children[i].classList.toggle('green');
+        i++;
+    } else if (input != diccionario[i].respuesta) {
+        ul.children[i].classList.toggle('red');
+        i++
+    }
+    console.log(i)
+    console.log(diccionario[i].respuesta)
 }
 
 window.onload = function() {
-    obtenerElement('btnEmpezar').onclick = toggleBtn;
+    return document.getElementById('btnEmpezar').onclick = toggleBtn;
+    // comenzarJuego()
 }
