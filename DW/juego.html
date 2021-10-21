@@ -14,68 +14,83 @@
 </head>
 
 <body>
-    <button id="btnEmpezar">¡COMENZAR!</button>
-    <div class="container0">
+    <button id="btnEmpezar" onclick="toggleBtn(btnEmpezar)">¡COMENZAR!</button>
+    <div class="all">
 
         <header>
             <div class="logo">
                 <h2>by Infinity</h2>
                 <h1>PASAPALABRA</h1>
             </div>
-            <div class="categoria">
-                <h3>Categoría: Economía</h3>
-            </div>
         </header>
 
-        <div class="container1">
-            <div class="outer-circle">
-                <ul class="innet-circle" id="lista">
-                    <div style="left: 275px; top: 27px;" class="inner-circle letter" id="A">A</div>
-                    <div style="left: 337px; top: 34px;" class="inner-circle letter" id="B">B</div>
-                    <div style="left: 395px; top: 58px;" class="inner-circle letter" id="C">C</div>
-                    <div style="left: 445px; top: 94px;" class="inner-circle letter" id="D">D</div>
-                    <div style="left: 485px; top: 142px;" class="inner-circle letter" id="E">E</div>
-                    <div style="left: 510px; top: 198px;" class="inner-circle letter" id="F">F</div>
-                    <div style="left: 522px; top: 259px;" class="inner-circle letter" id="G">G</div>
-                    <div style="left: 518px; top: 321px;" class="inner-circle letter" id="H">H</div>
-                    <div style="left: 499px; top: 380px;" class="inner-circle letter" id="I">I</div>
-                    <div style="left: 466px; top: 433px;" class="inner-circle letter" id="J">J</div>
-                    <div style="left: 420px; top: 475px;" class="inner-circle letter" id="L">L</div>
-                    <div style="left: 366px; top: 505px;" class="inner-circle letter" id="M">M</div>
-                    <div style="left: 306px; top: 520px;" class="inner-circle letter" id="N">N</div>
-                    <div style="left: 244px; top: 521px;" class="inner-circle letter" id="Ñ">Ñ</div>
-                    <div style="left: 183px; top: 505px;" class="inner-circle letter" id="O">O</div>
-                    <div style="left: 129px; top: 475px;" class="inner-circle letter" id="P">P</div>
-                    <div style="left: 84px; top: 433px;" class="inner-circle letter" id="Q">Q</div>
-                    <div style="left: 50px; top: 380px;" class="inner-circle letter" id="R">R</div>
-                    <div style="left: 31px; top: 321px;" class="inner-circle letter" id="S">S</div>
-                    <div style="left: 27px; top: 258px;" class="inner-circle letter" id="T">T</div>
-                    <div style="left: 39px; top: 198px;" class="inner-circle letter" id="U">U</div>
-                    <div style="left: 65px; top: 143px;" class="inner-circle letter" id="V">V</div>
-                    <div style="left: 105px; top: 94px;" class="inner-circle letter" id="X">X</div>
-                    <div style="left: 155px; top: 58px;" class="inner-circle letter" id="Y">Y</div>
-                    <div style="left: 213px; top: 35px;" class="inner-circle letter" id="Z">Z</div>
+        <div class="containerJuego">
+            <div class="rosco">
+                <ul id="lista">
+                    <li style="left: 275px; top: 27px;" class="letter" id="A">A</li>
+                    <li style="left: 337px; top: 34px;" class="letter" id="B">B</li>
+                    <li style="left: 395px; top: 58px;" class="letter" id="C">C</li>
+                    <li style="left: 445px; top: 94px;" class="letter" id="D">D</li>
+                    <li style="left: 485px; top: 142px;" class="letter" id="E">E</li>
+                    <li style="left: 510px; top: 198px;" class="letter" id="F">F</li>
+                    <li style="left: 522px; top: 259px;" class="letter" id="G">G</li>
+                    <li style="left: 518px; top: 321px;" class="letter" id="H">H</li>
+                    <li style="left: 499px; top: 380px;" class="letter" id="I">I</li>
+                    <li style="left: 466px; top: 433px;" class="letter" id="J">J</li>
+                    <li style="left: 420px; top: 475px;" class="letter" id="L">L</li>
+                    <li style="left: 366px; top: 505px;" class="letter" id="M">M</li>
+                    <li style="left: 306px; top: 520px;" class="letter" id="N">N</li>
+                    <li style="left: 244px; top: 521px;" class="letter" id="Ñ">Ñ</li>
+                    <li style="left: 183px; top: 505px;" class="letter" id="O">O</li>
+                    <li style="left: 129px; top: 475px;" class="letter" id="P">P</li>
+                    <li style="left: 84px; top: 433px;" class="letter" id="Q">Q</li>
+                    <li style="left: 50px; top: 380px;" class="letter" id="R">R</li>
+                    <li style="left: 31px; top: 321px;" class="letter" id="S">S</li>
+                    <li style="left: 27px; top: 258px;" class="letter" id="T">T</li>
+                    <li style="left: 39px; top: 198px;" class="letter" id="U">U</li>
+                    <li style="left: 65px; top: 143px;" class="letter" id="V">V</li>
+                    <li style="left: 105px; top: 94px;" class="letter" id="X">X</li>
+                    <li style="left: 155px; top: 58px;" class="letter" id="Y">Y</li>
+                    <li style="left: 213px; top: 35px;" class="letter" id="Z">Z</li>
                 </ul>
-                <div class="interfaz">
+                <div class="rosco_center">
 
-                    <div class="condicion">
-                        <p id="condicion__text">Empieza A</p>
+                    <div class="containerTextInfo">
+                        <p id="condicion"></p>
+                        <p id="categoria">Categoría: Random</p>
+                        <p id="definition"></p>
                     </div>
-                    <div class="definition">
-                        <p id="definition__text">Planta grande</p>
-                    </div>
-                    <div class="respuesta">
-                        <input class="input" id="respIngresada" name="respuesta" type="text" placeholder="TU RESPUESTA" autofocus>
-                        <button class="enviar" type="submit" onclick="submitForm()">enviar</button>
-                        <button class="siguiente" onclick="pasapalabra()">pasapalabra</button>
-                        <button onclick="comenzarJuego()"> funca</button>
+                    <div class="containerRespuesta">
+                        <div class="containerInput">
+                            <input class="input" id="respIngresada" name="respuesta" type="text" placeholder="TU RESPUESTA...">
+                            <button class="btnEnviar" type="submit" onclick="submitForm()"><img class="iconListo" src="./img/icon_listo.png" alt="icon listo"></button>
+                        </div>
+                        <p class="textPasapalabra">¿No sabes la respuesta?</p>
+                        <button class="btnPasapalabra" onclick="pasapalabra()">PASAPALABRA</button>
                     </div>
 
                 </div>
             </div>
+            <div class="footer">
+                <div class="reloj_cantFaltan">
+                    <p class="reloj">02:14</p>
 
-
-
+                    <div class="contadorFaltan">
+                        <p id="cantFaltantes"></p>
+                        <p class="cantFaltantes_text">Palabras <br> faltantes</p>
+                    </div>
+                </div>
+                <div class="contadores">
+                    <div class="correctas">
+                        <p class="cantCorrectas_text">Respuestas <br> correctas</p>
+                        <p id="cantCorrectas"></p>
+                    </div>
+                    <div class="incorrectas">
+                        <p class="cantIncorrectas_text">Respuestas <br> incorrectas</p>
+                        <p id="cantIncorrectas"></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -90,7 +105,6 @@
     </div>
 -->
 </body>
-<!-- <script type="module" src="./diccionario.js"></script> -->
 <script src="./script.js"></script>
 
 </html>

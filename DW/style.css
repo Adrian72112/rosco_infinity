@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.hide {
+    visibility: hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: white;
@@ -6,6 +10,12 @@ body {
     background-color: #560074;
     height: 100%;
     margin: 1% 2%;
+    display: flex;
+    justify-content: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 #btnEmpezar {
@@ -15,10 +25,6 @@ body {
     height: 100px;
     width: 200px;
     z-index: 1;
-}
-
-.hide {
-    visibility: hidden;
 }
 
 header {
@@ -41,37 +47,37 @@ h2 {
     justify-content: center;
     font-style: italic;
     font-weight: 500;
+    line-height: 10px;
 }
 
-h3 {
+
+/* h3 {
     margin: 0px;
     font-size: 1.5rem;
     font-style: italic;
-}
+} */
 
-.container1 {
-    height: 80vh;
+.containerJuego {
+    height: 89vh;
     border: 2px solid white;
     border-radius: 3.75rem;
-    margin: 0 1%;
     position: relative;
+    display: flex;
+    justify-content: center;
+    width: 1100px;
 }
 
-.interfaz {
+.rosco_center {
     position: absolute;
     height: 300px;
     width: 300px;
     text-align: center;
-    top: 200px;
+    top: 130px;
     left: 150px;
 }
 
-
-/***/
-
-.outer-circle {
-    margin: 0 auto;
-    height: 600px;
+.rosco {
+    margin: 10px auto 0 auto;
     width: 600px;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
@@ -79,7 +85,7 @@ h3 {
     position: relative;
 }
 
-.inner-circle {
+.letter {
     height: 3.125rem;
     width: 3.125rem;
     background: #D250FF;
@@ -88,9 +94,6 @@ h3 {
     -webkit-border-radius: 3.125rem;
     border-radius: 100%;
     position: absolute;
-}
-
-.letter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,26 +107,207 @@ h3 {
     outline: none;
 }
 
-.respuesta {
+.containerRespuesta {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-#correcta {}
-
-#incorrecta {}
-
-#pasapalabra {}
-
-.green {
-    background-color: green;
+.estiloRespCorrecta {
+    background-color: #78D370;
 }
 
-.red {
-    background-color: red;
+.estiloRespIncorrecta {
+    background-color: #E60000;
 }
 
-.orange {
-    background-color: orange;
+.estiloPasapalabra {
+    background-color: #FFB800;
+}
+
+.estiloSiguiente {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 2px 6px 15px #FFFFFF;
+}
+
+.contadorFaltan {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 130px;
+}
+
+.footer {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    bottom: 1px;
+    width: 95%;
+}
+
+.reloj_cantFaltan {
+    margin: 0 0 50px 20px;
+    display: flex;
+    position: relative;
+}
+
+.contadores {
+    margin-right: 30px;
+}
+
+.correctas {
+    display: flex;
+}
+
+.incorrectas {
+    display: flex;
+}
+
+.reloj {
+    color: black;
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0.2rem;
+    background-color: #ECB6FF;
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.3);
+    width: 8rem;
+    text-align: center;
+    border-radius: 70px;
+}
+
+#cantFaltantes,
+#cantCorrectas,
+#cantIncorrectas {
+    background-color: #A60CDC;
+    padding: 8px;
+    border-radius: 100%;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+}
+
+.cantFaltantes_text {
+    margin: auto 0 auto 8px;
+    font-weight: 500;
+}
+
+.cantCorrectas_text,
+.cantIncorrectas_text {
+    margin: auto 8px auto 0px;
+    font-weight: 500;
+}
+
+#cantCorrectas {
+    background-color: #78D370;
+    margin: 0;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#cantIncorrectas {
+    background-color: #E60000;
+    margin-top: 20px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#condicion {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+#categoria {
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    color: #000000;
+    margin: 5px auto;
+    background: #ECB6FF;
+    border-radius: 40px;
+    padding: 2px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#definition {
+    font-style: italic;
+    line-height: 1.5rem;
+    font-size: 1.6rem;
+    height: 5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerInput {
+    display: flex;
+    justify-content: center;
+}
+
+.btnEnviar {
+    background-color: #78D370;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconListo {
+    width: 25px;
+    padding: 0 10px;
+}
+
+.input {
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    height: 20px;
+    margin-right: 10px;
+    caret-color: #AFAFAF;
+}
+
+.input::-webkit-input-placeholder {
+    font-weight: bolder;
+    color: #DADADA;
+    font-size: 0.8rem;
+    line-height: 3;
+}
+
+#respIngresada {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.textPasapalabra {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.btnPasapalabra {
+    background: #A60CDC;
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 70px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 0 auto;
 }

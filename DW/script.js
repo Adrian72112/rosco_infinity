@@ -1,208 +1,243 @@
-// import { diccionario } from './diccionario.js';
-let cantidadCorrecto = 0,
-    cantidadIncorrecto = 0;
-
 const diccionario = [{
-        letra: 'a',
+        letra: 'a', //mayus
         desc: 'Planta grande',
-        respuesta: 'ARBOL',
+        respCorrecta: 'ARBOL', //mayus
         contiene: false,
     },
     {
         letra: 'b',
         desc: 'Animal que aparece en shrek',
-        respuesta: 'BURRO',
+        respCorrecta: 'BURRO',
         contiene: false,
     },
     {
         letra: 'c',
-        desc: 'ANIMAL DEL DESIERTO',
-        respuesta: 'CAMELLO',
+        desc: 'Animal del desierto',
+        respCorrecta: 'CAMELLO',
         contiene: false,
     },
     {
         letra: 'd',
         desc: 'Reptil extinto',
-        respuesta: 'DINOSAURIO',
+        respCorrecta: 'DINOSAURIO',
         contiene: false,
     },
     {
         letra: 'e',
         desc: 'Construccion urbana',
-        respuesta: 'EDIFICIO',
+        respCorrecta: 'EDIFICIO',
         contiene: false,
     },
     {
         letra: 'f',
         desc: 'Adjetivo despectivo',
-        respuesta: 'FEO',
+        respCorrecta: 'FEO',
         contiene: false,
     },
     {
         letra: 'g',
         desc: 'Adjetivo persona obesa',
-        respuesta: 'GORDO',
+        respCorrecta: 'GORDO',
         contiene: false,
     },
     {
         letra: 'h',
         desc: 'Ponen las gallinas',
-        respuesta: 'HUEVO',
+        respCorrecta: 'HUEVO',
         contiene: false,
     },
     {
         letra: 'i',
         desc: 'Reptil',
-        respuesta: 'IGUANA',
+        respCorrecta: 'IGUANA',
         contiene: false,
     },
     {
         letra: 'j',
         desc: 'Tienen los niños',
-        respuesta: 'JUGUETES',
+        respCorrecta: 'JUGUETES',
         contiene: false,
     },
     {
         letra: 'l',
         desc: 'Material de una bufanda',
-        respuesta: 'LANA',
+        respCorrecta: 'LANA',
         contiene: false,
     },
     {
         letra: 'm',
         desc: 'Referido a maternidad',
-        respuesta: 'MAMA',
+        respCorrecta: 'MAMA',
         contiene: false,
     },
     {
         letra: 'n',
         desc: 'Citrico y color',
-        respuesta: 'NARANJA',
+        respCorrecta: 'NARANJA',
         contiene: false,
     },
     {
         letra: 'ñ',
         desc: 'Animal propio de Uruguay',
-        respuesta: 'ÑANDU',
+        respCorrecta: 'ÑANDU',
         contiene: false,
     },
     {
         letra: 'o',
         desc: 'Garoto es una marca de este producto',
-        respuesta: 'CHOCOLATE',
+        respCorrecta: 'CHOCOLATE',
         contiene: true,
     },
     {
         letra: 'p',
         desc: 'Ave semi acuatico',
-        respuesta: 'PATO',
+        respCorrecta: 'PATO',
         contiene: false,
     },
     {
         letra: 'q',
         desc: 'Alimento lacteo',
-        respuesta: 'QUESO',
+        respCorrecta: 'QUESO',
         contiene: false,
     },
     {
         letra: 'r',
         desc: 'Animal que persiguen los gatos',
-        respuesta: 'RATON',
+        respCorrecta: 'RATON',
         contiene: false,
     },
     {
         letra: 's',
         desc: 'Centro del sistema solar',
-        respuesta: 'SOL',
+        respCorrecta: 'SOL',
         contiene: false,
     },
     {
         letra: 't',
         desc: 'Donde tomamos te',
-        respuesta: 'TAZA',
+        respCorrecta: 'TAZA',
         contiene: false,
     },
     {
         letra: 'u',
         desc: 'Herramienta para tomar sopa',
-        respuesta: 'CUCHARA',
+        respCorrecta: 'CUCHARA',
         contiene: true,
     },
     {
         letra: 'v',
         desc: 'Hay mucho en la rambla. Clima',
-        respuesta: 'VIENTO',
+        respCorrecta: 'VIENTO',
         contiene: false,
     },
     {
         letra: 'x',
         desc: 'Instrumento',
-        respuesta: 'XILOFONO',
+        respCorrecta: 'XILOFONO',
         contiene: false,
     },
     {
         letra: 'y',
         desc: 'Parte de dentro del huevo',
-        respuesta: 'YEMA',
+        respCorrecta: 'YEMA',
         contiene: true,
     },
     {
         letra: 'z',
         desc: 'Calzado',
-        respuesta: 'ZAPATO',
+        respCorrecta: 'ZAPATO',
         contiene: false,
     }
-    
-    
+
+
 ];
 
-//instanciar variables
-let arrayRespuestas = []
-let posicion, respuesta, respCorrecta, respIngresada;
+//al cargar la pagina le pasa el valor de la letra A (indice 0 en el diccionario) a los elementos 
+window.onload = initial = () => {
+    document.getElementById('definition').innerHTML = diccionario[0].desc;
+    document.getElementById('condicion').innerHTML = diccionario[0].contiene == false ? `EMPIEZA CON ${diccionario[0].letra.toUpperCase()}` : `CONTIENE ${diccionario[0].letra.toUpperCase()}`;
+    reloj();
+
+    document.getElementById('cantFaltantes').innerHTML = cantFaltantes;
+    document.getElementById('cantCorrectas').innerHTML = cantCorrectas;
+    document.getElementById('cantIncorrectas').innerHTML = cantIncorrectas;
+}
+
+//focus en el input
+focusInput = () => {
+    document.getElementById('respIngresada').focus() //luego de apretar el boton, hace focus otra vez en el input
+}
+
+//funcion que hace que haga toggle en aparecer o desaparecer un elemento
+const toggleBtn = (idElement) => {
+    if (idElement.classList.contains('hide')) {
+        idElement.classList.remove('hide')
+    } else {
+        idElement.classList.add('hide')
+    }
+    focusInput()
+}
 
 // Con la tecla enter envia la respuesta
-document.onkeyup = enter;
-
-function enter(e) {
-    if (e.which == 13) {
+document.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
         submitForm();
     }
+});
+
+//variables submitForm()
+let i = 0;
+
+// GUARDAR EN LA BASE DE DATOS LAS LETRAS EN MAYUS
+const next = () => {
+    i++;
+    document.getElementById('definition').innerHTML = diccionario[i].desc;
+    document.getElementById('respIngresada').value = "";
+    document.getElementById('condicion').innerHTML = diccionario[i].contiene == false ? `EMPIEZA CON ${diccionario[i].letra.toUpperCase()}` : `CONTIENE ${diccionario[i].letra.toUpperCase()}`;
+    //contadores
+    document.getElementById('cantFaltantes').innerHTML = cantFaltantes;
+    document.getElementById('cantCorrectas').innerHTML = cantCorrectas;
+    document.getElementById('cantIncorrectas').innerHTML = cantIncorrectas;
 }
 
+//variables submitForm()
+const listaLetras = document.getElementById('lista');
+let respCorrecta,
+    cantCorrectas = 0,
+    cantIncorrectas = 0,
+    cantFaltantes = 25;
 
-// function enviarRespuesta(respuesta) {
-//     respuesta = document.getElementById('respIngresada').value.toUpperCase();
-//     document.getElementById('respIngresada').value = ""
+const submitForm = () => {
 
-//     if (respIngresada === respCorrecta) {
+    const valueInput = document.getElementById("respIngresada").value.toUpperCase();
 
-//         arrayRespuestas.push(1);
+    if (valueInput) { //si el usuario no ingresó nada valueInput = false, por lo que no entra al if y no hace nada. si tiene un valor va a ser true y envía. 
+        //Esto se hace para evitar errores de haber mandado la respuesta sin querer
 
-//     } else {
+        if (valueInput == diccionario[i].respCorrecta) {
+            listaLetras.children[i].classList.toggle('estiloRespCorrecta');
+            cantCorrectas++;
+            cantFaltantes--;
+            next();
 
-//     }
-
-//     console.log(respuesta, arrayRespuestas)
-
-// }
+        } else if (valueInput != diccionario[i].respCorrecta) {
+            listaLetras.children[i].classList.toggle('estiloRespIncorrecta');
+            cantIncorrectas++;
+            cantFaltantes--;
+            next();
+        }
+    }
+    focusInput()
+}
 
 const pasapalabra = () => {
-    ul.children[i].classList.toggle('orange');
-    siguiente();
+    listaLetras.children[i].classList.toggle('estiloPasapalabra');
+    next();
+    focusInput();
 }
-
-function siguiente() {
-    i++;
-    document.getElementById('definition__text').innerHTML = diccionario[i].desc;
-    document.getElementById('respIngresada').value = "";
-    document.getElementById('condicion__text').innerHTML = diccionario[i].contiene == false ? `Empieza con: ${diccionario[i].letra}` : `Contiene: ${diccionario[i].letra}`;
-}
-// 0 = incorrecta
-// 1 = correcta
-// 2 = pasapalabra
 
 //RELOJ
-
+// se llama en la linea 159 (windo.onload)
 function reloj() {
     fecha = new Date(); //Actualizar fecha.
     hora = fecha.getHours(); //hora actual
@@ -219,46 +254,21 @@ function reloj() {
     }
     //devolver los datos:
     mireloj = hora + " : " + minuto + " : " + segundo;
-    return mireloj;
+    console.log(mireloj);
 }
 
-const btnEmpezar = document.getElementById('btnEmpezar');
 
-function toggleBtn() {
-    if (btnEmpezar.classList.contains('hide')) {
-        btnEmpezar.classList.remove('hide')
-    } else {
-        btnEmpezar.classList.add('hide')
-    }
-}
 
-const ul = document.getElementById('lista');
+//LISTA DE TAREAS
+//array de respuestas
+//nombre de las variables
+//autofocus luego del boton enviar
+//mostrar los contadores
 
-let i = 0;
+//categorias:
+//no hace falta que sean muchas materias, economia y una mas (tutores o estudiantes, algo original)
+//hay una categtoria que es aleatorio, tenemos que decirle en cada palabra a que materia refiere
 
-const comenzarJuego = () => {
-    console.log(ul.children[i]);
-    document.getElementById('definition__text').innerHTML = diccionario[i].desc;
-}
-
-const submitForm = () => {
-    const input = document.getElementById("respIngresada").value.toUpperCase();;
-    if (input == diccionario[i].respuesta) {
-        ul.children[i].classList.toggle('green');
-        cantidadCorrecto++;
-        siguiente();
-        console.log('correcto :' + cantidadCorrecto)
-
-    } else if (input != diccionario[i].respuesta) {
-        ul.children[i].classList.toggle('red');
-        console.log(diccionario[i].respuesta, input);
-        cantidadIncorrecto++;
-        siguiente();
-        console.log(cantidadIncorrecto)
-    }
-}
-
-window.onload = function() {
-    return document.getElementById('btnEmpezar').onclick = toggleBtn;
-    // comenzarJuego()
-}
+// 0 = incorrecta
+// 1 = correcta
+// 2 = pasapalabra
