@@ -246,7 +246,7 @@ function reloj() {
         minuto = "0" + minuto;
     }
     if (segundo < 10) { //dos cifras para el segundo
-        segundo = "0" + segundo;
+        segundo = "0" + segundoo;
     }
     //devolver los datos:
     mireloj = hora + " : " + minuto + " : " + segundo;
@@ -263,3 +263,5 @@ function reloj() {
 // 0 = incorrecta
 // 1 = correcta
 // 2 = pasapalabra
+
+//hola hbfhbhsd
