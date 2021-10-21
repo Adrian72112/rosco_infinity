@@ -255,9 +255,6 @@ function reloj() {
 
 //LISTA DE TAREAS
 //array de respuestas
-//nombre de las variables
-//autofocus luego del boton enviar
-//mostrar los contadores
 //espaciado de la descripcion
 //
 
