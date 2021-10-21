@@ -152,11 +152,17 @@ const diccionario = [{
 
 ];
 
+const arrResultados = [] ;
+const estado = {
+    correcto: 1,
+    incorrecto: 0,
+    pasapalabra: 2,
+}
 //al cargar la pagina le pasa el valor de la letra A (indice 0 en el diccionario) a los elementos 
 window.onload = initial = () => {
     document.getElementById('definition').innerHTML = diccionario[0].desc;
     document.getElementById('condicion').innerHTML = diccionario[0].contiene == false ? `EMPIEZA CON ${diccionario[0].letra.toUpperCase()}` : `CONTIENE ${diccionario[0].letra.toUpperCase()}`;
-    reloj();
+    // reloj();
 
     document.getElementById('cantFaltantes').innerHTML = cantFaltantes;
     document.getElementById('cantCorrectas').innerHTML = cantCorrectas;
@@ -219,7 +225,7 @@ const submitForm = () => {
             cantCorrectas++;
             cantFaltantes--;
             next();
-
+            arrResultados.add(estado.pasapalabra);
         } else if (valueInput != diccionario[i].respCorrecta) {
             listaLetras.children[i].classList.toggle('estiloRespIncorrecta');
             cantIncorrectas++;
@@ -236,22 +242,30 @@ const pasapalabra = () => {
     focusInput();
 }
 
+//variables pasapalabra
+if (i  === 24) {
+    const pos = arrResultados.findIndex((resultado) => resultado === estado.pasapalabra)
+    console.log(pos)
+}
+
+
+
 //RELOJ
 // se llama en la linea 159 (windo.onload)
-function reloj() {
-    fecha = new Date(); //Actualizar fecha.
-    minuto = fecha.getMinutes(); //minuto actual
-    segundo = fecha.getSeconds(); //segundo actual
-    if (minuto < 10) { //dos cifras para el minuto
-        minuto = "0" + minuto;
-    }
-    if (segundo < 10) { //dos cifras para el segundo
-        segundo = "0" + segundoo;
-    }
-    //devolver los datos:
-    mireloj = hora + " : " + minuto + " : " + segundo;
-    console.log(mireloj);
-}
+// function reloj() {
+//     fecha = new Date(); //Actualizar fecha.
+//     minuto = fecha.getMinutes(); //minuto actual
+//     segundo = fecha.getSeconds(); //segundo actual
+//     if (minuto < 10) { //dos cifras para el minuto
+//         minuto = "0" + minuto;
+//     }
+//     if (segundo < 10) { //dos cifras para el segundo
+//         segundo = "0" + segundoo;
+//     }
+//     //devolver los datos:
+//     mireloj = hora + " : " + minuto + " : " + segundo;
+//     console.log(mireloj);
+// }
 
 //LISTA DE TAREAS
 //array de respuestas
