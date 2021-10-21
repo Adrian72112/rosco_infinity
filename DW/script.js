@@ -264,11 +264,22 @@ function reloj() {
 //nombre de las variables
 //autofocus luego del boton enviar
 //mostrar los contadores
+//espaciado de la descripcion
+//
 
 //categorias:
 //no hace falta que sean muchas materias, economia y una mas (tutores o estudiantes, algo original)
 //hay una categtoria que es aleatorio, tenemos que decirle en cada palabra a que materia refiere
 
+
+
 // 0 = incorrecta
 // 1 = correcta
 // 2 = pasapalabra
+
+//findeindex((i) => i===2), )
+//cosnt estado = {
+//     correcto: 1,
+//     incorrecto: 0,
+//     pasapalabra: 2,
+// }
