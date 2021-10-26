@@ -180,8 +180,9 @@ const toggleBtn = (idElement) => {
         idElement.classList.remove('hide')
     } else {
         idElement.classList.add('hide')
-    }
-    focusInput()
+    };
+    focusInput();
+    iniciar();
 }
 
 // Con la tecla enter envia la respuesta
@@ -208,10 +209,7 @@ const next = () => {
 
 //variables submitForm()
 const listaLetras = document.getElementById('lista');
-let respCorrecta,
-    cantCorrectas = 0,
-    cantIncorrectas = 0,
-    cantFaltantes = 25;
+let respCorrecta, cantCorrectas = 0, cantIncorrectas = 0, cantFaltantes = 25;
 
 const submitForm = () => {
 
@@ -225,12 +223,14 @@ const submitForm = () => {
             cantCorrectas++;
             cantFaltantes--;
             next();
+            detener(i);
             arrResultados.add(estado.pasapalabra);
         } else if (valueInput != diccionario[i].respCorrecta) {
             listaLetras.children[i].classList.toggle('estiloRespIncorrecta');
             cantIncorrectas++;
             cantFaltantes--;
             next();
+            detener(i);
         }
     }
     focusInput()
@@ -288,3 +288,45 @@ if (i  === 24) {
 //     incorrecto: 0,
 //     pasapalabra: 2,
 // }
+
+//probando cronometro
+	
+    const $tiempoTranscurrido = document.querySelector(".reloj");
+		
+	let idInterval, tiempoInicio = null, diferenciaTemporal = 0;
+
+	const agregarCero = valor => {
+		if (valor < 10) {
+			return "0" + valor;
+		} else {
+			return valor;
+		}
+	}
+    
+    const msAminYseg = (milisegundos) => {
+            const minutos = parseInt(milisegundos / 60000);
+            milisegundos -= minutos * 60 * 1000;
+            segundos = (milisegundos / 1000);
+            return `${agregarCero(minutos)}:${agregarCero(segundos.toFixed())}`;
+    };
+
+    const refrescarTiempo = () => {
+            const ahora = new Date();
+            const diferencia = ahora.getTime() - tiempoInicio.getTime();
+            $tiempoTranscurrido.textContent = msAminYseg(diferencia);
+    };
+
+	const iniciar = () => {
+		const ahora = new Date();
+		tiempoInicio = new Date(ahora.getTime() - diferenciaTemporal);
+        clearInterval(idInterval);
+		idInterval = setInterval(refrescarTiempo, 100);
+	};
+
+	const detener = () => {
+		if ((i === 24) || ( $tiempoTranscurrido.textContent == "05:00")) {
+            clearInterval(idInterval);
+            $tiempoTranscurrido.textContent = "00:00";
+            diferenciaTemporal = 0;
+	    }
+    }
