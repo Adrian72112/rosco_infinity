@@ -140,7 +140,7 @@ const diccionario = [{
         letra: 'y',
         desc: 'Parte de dentro del huevo',
         respCorrecta: 'YEMA',
-        contiene: true,
+        contiene: false,
     },
     {
         letra: 'z',
@@ -148,7 +148,6 @@ const diccionario = [{
         respCorrecta: 'ZAPATO',
         contiene: false,
     }
-
 
 ];
 
