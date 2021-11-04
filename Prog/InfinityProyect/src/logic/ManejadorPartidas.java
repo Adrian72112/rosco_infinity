@@ -5,6 +5,9 @@ public class ManejadorPartidas {
 	
 	private ArrayList<Partida> partidas;
 	
+	array list char letras
+	
+	
 	public ManejadorPartidas() {
 		this.partidas = new ArrayList<Partida>();
 	}

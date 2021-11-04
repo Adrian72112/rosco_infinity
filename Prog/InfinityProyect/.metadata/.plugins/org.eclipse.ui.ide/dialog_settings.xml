@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\camil\Desktop\Anima\Folder Git Infinity\rosco_infinity\Prog\InfinityProyect\src"/>
 			<item value="/Users/luciasebe/Desktop/rosco_infinity-main/Prog/InfinityProyect"/>
 			<item value="/Users/luciasebe/Desktop/Infinity/rosco_infinity/Prog"/>
 			<item value="/Users/luciasebe/Desktop/Infinity/rosco_infinity/Prog/InfinityProyect"/>
