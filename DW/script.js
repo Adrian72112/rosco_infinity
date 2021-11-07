@@ -152,20 +152,21 @@ const diccionario = [{
 ];
 
 const arrResultados = [];
+
 const estado = {
     correcto: 1,
     incorrecto: 0,
     pasapalabra: 2
 }
+
 //al cargar la pagina le pasa el valor de la letra A (indice 0 en el diccionario) a los elementos 
 window.onload = initial = () => {
     document.getElementById('definition').innerHTML = diccionario[0].desc;
     document.getElementById('condicion').innerHTML = diccionario[0].contiene == false ? `EMPIEZA CON ${diccionario[0].letra.toUpperCase()}` : `CONTIENE ${diccionario[0].letra.toUpperCase()}`;
-    // reloj();
-
     document.getElementById('cantFaltantes').innerHTML = cantFaltantes;
     document.getElementById('cantCorrectas').innerHTML = cantCorrectas;
     document.getElementById('cantIncorrectas').innerHTML = cantIncorrectas;
+    $tiempoTranscurrido.textContent = msAminYseg(timmer);
 }
 
 //focus en el input
@@ -199,7 +200,8 @@ const next = () => {
     document.getElementById('definition').innerHTML = diccionario[i].desc;
     document.getElementById('respIngresada').value = "";
     document.getElementById('condicion').innerHTML = diccionario[i].contiene == false ? `EMPIEZA CON ${diccionario[i].letra.toUpperCase()}` : `CONTIENE ${diccionario[i].letra.toUpperCase()}`;
-    //contadores
+}
+const refreshContadores = () => {
     document.getElementById('cantFaltantes').innerHTML = cantFaltantes;
     document.getElementById('cantCorrectas').innerHTML = cantCorrectas;
     document.getElementById('cantIncorrectas').innerHTML = cantIncorrectas;
@@ -207,53 +209,90 @@ const next = () => {
 
 //variables submitForm()
 const listaLetras = document.getElementById('lista');
-let respCorrecta, cantCorrectas = 0, cantIncorrectas = 0, cantFaltantes = 25;
+let respCorrecta, cantCorrectas = 0, cantIncorrectas = 0, cantFaltantes = 25, completarPasapalabra = false;
+
+//Funcion que completa los pasapalabras faltantes (en caso de ser necesario), o ir a la siguiente pregunta 
+function siguientePregunta () {
+    if (i == 25 || completarPasapalabra) {
+        //la primera vez entrar por el i despues entra por completarPasapalabra que es true
+        completarPasapalabra = true;
+        // Refrescar el indice i, con el primer estado.pasapalabra
+        let shouldEnter = true;
+        arrResultados.forEach((e, indice) => {
+            if (shouldEnter == true && e === estado.pasapalabra && (indice >= i || i == 25)){
+                i = indice;
+                shouldEnter = false;
+            }
+        });
+        if (shouldEnter == true){
+            i = arrResultados.indexOf(x => x === estado.pasapalabra);
+        }
+
+        if (i != -1) {
+            next();
+            focusInput()
+        } else {
+            i = 25;
+            detener();
+        }
+    } else {
+        next();
+        detener(i);
+        focusInput()
+    }
+}
 
 const submitForm = () => {
 
     const valueInput = document.getElementById("respIngresada").value.toUpperCase();
 
-    if (valueInput) { //si el usuario no ingresó nada valueInput = false, por lo que no entra al if y no hace nada. si tiene un valor va a ser true y envía. 
+    if (valueInput) {
+        //si el usuario no ingresó nada valueInput = false, por lo que no entra al if y no hace nada. si tiene un valor va a ser true y envía. 
         //Esto se hace para evitar errores de haber mandado la respuesta sin querer
 
         if (valueInput == diccionario[i].respCorrecta) {
-            listaLetras.children[i].classList.toggle('estiloRespCorrecta');
+            listaLetras.children[i].classList.remove('estiloPasapalabra');
+            listaLetras.children[i].classList.add('estiloRespCorrecta');
             cantCorrectas++;
             cantFaltantes--;
-            arrResultados.push(estado.correcto);
-            i++;
+            if (completarPasapalabra) {
+                arrResultados[i] = estado.correcto;
+            }
+            else {
+                arrResultados.push(estado.correcto);
+            }
         } else if (valueInput != diccionario[i].respCorrecta) {
-            listaLetras.children[i].classList.toggle('estiloRespIncorrecta');
+            listaLetras.children[i].classList.remove('estiloPasapalabra');
+            listaLetras.children[i].classList.add('estiloRespIncorrecta');
             cantIncorrectas++;
             cantFaltantes--;
-            arrResultados.push(estado.incorrecto);
-            i++;
+            if (completarPasapalabra) {
+                arrResultados[i] = estado.incorrecto;
+            }
+            else {
+                arrResultados.push(estado.incorrecto);
+            }
         }
-        if (i === 25) {
-            console.log("indice es 25)")
-            focusInput()
-        } else {
-            next();
-            detener(i);
-            console.log(arrResultados, i)
-            focusInput()
-        }
+
+        i++;
+        refreshContadores();
+        siguientePregunta();
     }
     /*pos = arrResultados.findIndex((resultado) => resultado === estado.pasapalabra)
     console.log(pos)*/
 }
 
 const pasapalabra = () => {
-    listaLetras.children[i].classList.toggle('estiloPasapalabra');
-    i++;
-    if (i === 25) {
-        console.log("indice es 25")
-    } else {
-        next();
-        focusInput();
-        arrResultados.push(estado.pasapalabra);
-        console.log(arrResultados, i)
+    listaLetras.children[i].classList.add('estiloPasapalabra');
+    if (completarPasapalabra) {
+        // ARREGLAR LOGICA ACA
+        arrResultados[i] = estado.pasapalabra;
     }
+    else {
+        arrResultados.push(estado.pasapalabra);
+    }
+    i++;
+    siguientePregunta();
 }
 console.log(i)
 
@@ -262,43 +301,14 @@ const pos = 0;
 const index2 = () => {
     pos = arrResultados.findIndex((resultado) => resultado === estado.pasapalabra)
     // console.log(pos)
-    console.log("i es 2")
 }
 
-
-//RELOJ
-// se llama en la linea 159 (windo.onload)
-// function reloj() {
-//     fecha = new Date(); //Actualizar fecha.
-//     minuto = fecha.getMinutes(); //minuto actual
-//     segundo = fecha.getSeconds(); //segundo actual
-//     if (minuto < 10) { //dos cifras para el minuto
-//         minuto = "0" + minuto;
-//     }
-//     if (segundo < 10) { //dos cifras para el segundo
-//         segundo = "0" + segundoo;
-//     }
-//     //devolver los datos:
-//     mireloj = hora + " : " + minuto + " : " + segundo;
-//     console.log(mireloj);
-// }
-
-//LISTA DE TAREAS
-//array de respuestas
-//espaciado de la descripcion
-//
-
-//categorias:
-//no hace falta que sean muchas materias, economia y una mas (tutores o estudiantes, algo original)
-//hay una categtoria que es aleatorio, tenemos que decirle en cada palabra a que materia refiere
-
 //findeindex((i) => i===2), )
-
 
 //Cronometro
 const $tiempoTranscurrido = document.querySelector(".reloj");
 
-let idInterval, tiempoInicio = null, diferenciaTemporal = 0;
+let idInterval, tiempoInicio = null, timmer = 300000;
 
 const agregarCero = valor => {
     if (valor < 10) {
@@ -315,23 +325,25 @@ const msAminYseg = (milisegundos) => {
     return `${agregarCero(minutos)}:${agregarCero(segundos.toFixed())}`;
 };
 
-const refrescarTiempo = () => {
-    const ahora = new Date();
-    const diferencia = ahora.getTime() - tiempoInicio.getTime();
-    $tiempoTranscurrido.textContent = msAminYseg(diferencia);
+const iniciar = () => {
+    $tiempoTranscurrido.textContent = msAminYseg(timmer);
+    timeout = setTimeout(countdown, 1000)
 };
 
-const iniciar = () => {
-    const ahora = new Date();
-    tiempoInicio = new Date(ahora.getTime() - diferenciaTemporal);
-    clearInterval(idInterval);
-    idInterval = setInterval(refrescarTiempo, 100);
-};
+function countdown() {
+    timmer -= 1000;
+    $tiempoTranscurrido.textContent = msAminYseg(timmer);
+    if (timmer <= 0) {
+        detener();
+        clearTimeout(timeout);
+    } else {
+        timeout = setTimeout(countdown, 1000)
+    }
+}
 
 const detener = () => {
-    if ((i === 24) || ($tiempoTranscurrido.textContent == "05:00")) {
-        clearInterval(idInterval);
+    if (i === 25) {
         $tiempoTranscurrido.textContent = "00:00";
-        diferenciaTemporal = 0;
+        timmer = 0;
     }
 }
