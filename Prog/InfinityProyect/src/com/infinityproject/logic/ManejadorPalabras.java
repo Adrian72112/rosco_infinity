@@ -1,56 +1,40 @@
 package com.infinityproject.logic;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.infinityproject.models.Palabra;
-import com.infinityproject.persistence.ManejadorAdministradorBD;
+import com.infinityproject.persistence.ManejadorPalabraBD;
 
 public class ManejadorPalabras {
 
-	private ManejadorAdministradorBD manejadorBD = new ManejadorAdministradorBD(); 
-	private ArrayList<Palabra> palabras;
+	private ManejadorPalabraBD manejadorBD = new ManejadorPalabraBD();
 	
 	public ManejadorPalabras() {
-		this.palabras = new ArrayList<Palabra>();
+		this.manejadorBD = new ManejadorPalabraBD(); 
 	}
 	
-	public void /*Palabra*/ crearNuevaPalabra(char letra, String definicion, boolean empiezaPor) {
-	//	LETRA
-	//	Dado una letra, una definici�n y un boolean que especifica si se
-	//	empieza por la letra o la contiene, se crea una nueva Palabra para
-	//	utilizar en el juego. El c�digo debe generarse autom�ticamente y 
-	//	debe ser �nico.
-	
-		//return manejadorBD.createNewPalabra(new Palabra(letra, definicion, empiezaPor));
+	//	Dado una letra, una definici�n y un boolean que especifica si se empieza por la letra o la contiene, se crea una nueva Palabra para utilizar en el juego.
+	public Palabra crearNuevaPalabra(char letra, String definicion, boolean empiezaPor) throws SQLException {
+		return manejadorBD.createNewPalabra(new Palabra(letra, definicion, empiezaPor));
 	}
 	
-	
-	public void eliminarPalabra(int codigo) {
-		//LETRA
-		//Dado un c�digo de palabra, se elimina de la aplicaci�n.
-		
-		//manejadorBD.deletePalabra(codigo);
+	//Dado un c�digo de palabra, se elimina de la aplicacion.
+	public boolean eliminarPalabra(int codigo) throws SQLException {
+		return manejadorBD.deletePalabra(codigo);
 	}
 	
-	public void /*ArrayList<Palabra>*/ obtenerPalabras() {
-		
-	//	LETRA
-	//	Caso 1: El sistema devuelve un ArrayList con 25 palabras, tal que la
-	//	letra de cada palabra debe ser distinta a las dem�s.
-	//	El estado de uso de las palabras elegidas debe estar en false y
-	//	luego de seleccionarlas las pasamos a true. En caso de que no
-	//	tengamos palabras en false, marcamos todas en true y obtenemos
-	//	las mismas de forma aleatoria.
-		
-		//...
+	public ArrayList<Palabra> obtenerPalabras() throws SQLException{
+		return manejadorBD.obtenerPalabras(""); // No queremos filtrar por categoria
 	}
 	
-	public void /*ArrayList<Palabra>*/ obtenerPalabras(String categoria) {
-	//	LETRA
-	//	Caso 2: Dado un nombre de categor�a, se devuelven palabras igual
-	//	al Caso 1, pero de la categor�a antes mencionada.
-		
-		//...
+	public ArrayList<Palabra> obtenerPalabras(String categoria) throws SQLException {
+		return manejadorBD.obtenerPalabras(categoria);
 	}
 	
+	public ArrayList<Palabra> obtenerTop10PalabrasMasDificiles() throws SQLException {
+	//Devuelve un ArrayList de Palabras, con el top 10 palabra cuyo índice de respuesta incorrecta sea más cercano a 1
+		return manejadorBD.obtenerTop10PalabrasMasDificiles();
+
+	}
 }

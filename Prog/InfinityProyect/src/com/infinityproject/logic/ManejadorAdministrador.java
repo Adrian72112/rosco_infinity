@@ -14,7 +14,6 @@ public class ManejadorAdministrador {
 		this.manejadorAdminDb = new ManejadorAdministradorBD();
 	}
 	
-	//Metodos
 	public Administrador crearAdministrador (int ci, String nombre, String apellido, String mail, int pin) throws Exception {
 		Administrador admin = new Administrador(ci, nombre, apellido, mail, pin);
 		

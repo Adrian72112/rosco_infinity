@@ -52,10 +52,4 @@ public class ManejadorPartidas {
 	//	Devuelve un ArrayList de Jugadores, con los 10 jugadores que han conseguido m�s partidas perdidas (no poder contestar ninguna correctamente).
 	}
 	
-	public void /*ArrayList<Palabra>*/ obtenerTop10PalabrasMasDificiles() {
-	//	LETRA
-	//	Devuelve un ArrayList de Palabras, con el top 10 palabra cuyo �ndice de respuesta incorrecta sea m�s cercano a 1
-	}
-	
-	
 }

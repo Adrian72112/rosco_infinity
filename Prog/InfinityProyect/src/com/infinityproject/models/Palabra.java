@@ -3,23 +3,31 @@ package com.infinityproject.models;
 public class Palabra {
 
 	 private char letra ;
-	 private String definicion;
-	 private int codigo, cantidadRespondida, cantidadRespondidaCorrectamente; 
-	 private boolean empiezaPor, estadoUso;
+	 private String palabra, definicion, categoria;
+	 private int codigo, cantidadRespondida, cantidadRespondidaCorrectamente, frecuencia; 
+	 private boolean empiezaPor;
 	 
-	 public Categoria categoria;
+	 public Palabra() {
+		 
+	 }
 
-	public Palabra(char letra, String definicion, int codigo, int cantidadRespondida,
-			int cantidadRespondidaCorrectamente, boolean empiezaPor, boolean estadoUso, Categoria categoria) {
-		super();
+	 public Palabra(char letra, String definicion, int codigo, int cantidadRespondida,
+			int cantidadRespondidaCorrectamente, boolean empiezaPor,
+			String categoria, int frecuencia) {
 		this.letra = letra;
 		this.definicion = definicion;
 		this.codigo = codigo;
 		this.cantidadRespondida = cantidadRespondida;
 		this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
 		this.empiezaPor = empiezaPor;
-		this.estadoUso = estadoUso;
 		this.categoria = categoria;
+		this.frecuencia = frecuencia;
+	}
+
+	public Palabra(char letra, String definicion, boolean empiezaPor) {
+		this.letra = letra;
+		this.definicion = definicion;
+		this.empiezaPor = empiezaPor;
 	}
 
 	public char getLetra() {
@@ -62,7 +70,7 @@ public class Palabra {
 		this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
 	}
 
-	public boolean isEmpiezaPor() {
+	public boolean getEmpiezaPor() {
 		return empiezaPor;
 	}
 
@@ -70,20 +78,28 @@ public class Palabra {
 		this.empiezaPor = empiezaPor;
 	}
 
-	public boolean isEstadoUso() {
-		return estadoUso;
-	}
-
-	public void setEstadoUso(boolean estadoUso) {
-		this.estadoUso = estadoUso;
-	}
-
-	public Categoria getCategoria() {
+	public String getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(Categoria categoria) {
+	public void setCategoria(String categoria) {
 		this.categoria = categoria;
+	}
+
+	public int getFrecuencia() {
+		return frecuencia;
+	}
+
+	public void setFrecuencia(int frecuencia) {
+		this.frecuencia = frecuencia;
+	}
+
+	public String getPalabra() {
+		return palabra;
+	}
+
+	public void setPalabra(String palabra) {
+		this.palabra = palabra;
 	}
 
 	 
