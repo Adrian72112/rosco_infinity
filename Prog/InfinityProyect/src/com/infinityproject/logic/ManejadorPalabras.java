@@ -1,41 +1,42 @@
-package logic;
+package com.infinityproject.logic;
+
 import java.util.ArrayList;
+
+import com.infinityproject.models.Palabra;
+import com.infinityproject.persistence.ManejadorAdministradorBD;
 
 public class ManejadorPalabras {
 
+	private ManejadorAdministradorBD manejadorBD = new ManejadorAdministradorBD(); 
 	private ArrayList<Palabra> palabras;
 	
 	public ManejadorPalabras() {
 		this.palabras = new ArrayList<Palabra>();
 	}
 	
-	//
 	public void /*Palabra*/ crearNuevaPalabra(char letra, String definicion, boolean empiezaPor) {
 	//	LETRA
-	//	Dado una letra, una definición y un boolean que especifica si se
+	//	Dado una letra, una definiciï¿½n y un boolean que especifica si se
 	//	empieza por la letra o la contiene, se crea una nueva Palabra para
-	//	utilizar en el juego. El código debe generarse automáticamente y no
-	//	puede ser único.
-		
-		
-		
-		//Palabra pal = new Palabra(letra, definicion, empiezaPor);
-		//this.palabras.add(pal);
-		
+	//	utilizar en el juego. El cï¿½digo debe generarse automï¿½ticamente y 
+	//	debe ser ï¿½nico.
+	
+		//return manejadorBD.createNewPalabra(new Palabra(letra, definicion, empiezaPor));
 	}
+	
 	
 	public void eliminarPalabra(int codigo) {
 		//LETRA
-		//Dado un código de palabra, se elimina de la aplicación.
+		//Dado un cï¿½digo de palabra, se elimina de la aplicaciï¿½n.
 		
-		//...
+		//manejadorBD.deletePalabra(codigo);
 	}
 	
 	public void /*ArrayList<Palabra>*/ obtenerPalabras() {
 		
 	//	LETRA
 	//	Caso 1: El sistema devuelve un ArrayList con 25 palabras, tal que la
-	//	letra de cada palabra debe ser distinta a las demás.
+	//	letra de cada palabra debe ser distinta a las demï¿½s.
 	//	El estado de uso de las palabras elegidas debe estar en false y
 	//	luego de seleccionarlas las pasamos a true. En caso de que no
 	//	tengamos palabras en false, marcamos todas en true y obtenemos
@@ -46,8 +47,8 @@ public class ManejadorPalabras {
 	
 	public void /*ArrayList<Palabra>*/ obtenerPalabras(String categoria) {
 	//	LETRA
-	//	Caso 2: Dado un nombre de categoría, se devuelven palabras igual
-	//	al Caso 1, pero de la categoría antes mencionada.
+	//	Caso 2: Dado un nombre de categorï¿½a, se devuelven palabras igual
+	//	al Caso 1, pero de la categorï¿½a antes mencionada.
 		
 		//...
 	}

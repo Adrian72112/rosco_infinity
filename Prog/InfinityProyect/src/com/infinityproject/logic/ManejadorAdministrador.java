@@ -1,6 +1,9 @@
-package logic;
+package com.infinityproject.logic;
 
 import java.util.ArrayList;
+
+import com.infinityproject.models.Administrador;
+import com.infinityproject.models.Usuario;
 
 public class ManejadorAdministrador {
 	
@@ -10,10 +13,10 @@ public class ManejadorAdministrador {
 		this.usuarios = new ArrayList<Usuario>();
 	}
 	
-	//Métodos
+	//Metodos
 	public void crearAdministrador (int ci, String nombre, String apellido, String mail, int pin, int ciA, int pinA ) {
 		Usuario admin = new Administrador(ci, nombre, apellido, mail, pin); 
-		//se crea un nuevo adm. ciA y pinA es parte del adm que está creando al nuevo adm
+		//se crea un nuevo adm. ciA y pinA es parte del adm que esta creando al nuevo adm
 		this.usuarios.add(admin);
 	}
 	
@@ -22,16 +25,16 @@ public class ManejadorAdministrador {
 		
 		for(int i = 0; i < this.usuarios.size(); i++) { //recorre los usuarios que existen
 			if(this.usuarios.get(i).getCi() == ci) { 
-				//dentro del array de usuarios, pide la ci del i y la compara con la que ingresó el adm. 
-				//si es así, la variable aux será positiva
+				//dentro del array de usuarios, pide la ci del i y la compara con la que ingresï¿½ el adm. 
+				//si es asi, la variable aux sera positiva
 				aux = i;
 			}
 		}
 		
-		if(aux >= 0) { //si aux es positiva, significa que entró al if anterior, por lo que coincide y se remueve del array
+		if(aux >= 0) { //si aux es positiva, significa que entrï¿½ al if anterior, por lo que coincide y se remueve del array
 			this.usuarios.remove(aux);
-		} else { //si es negativo no entró en el if
-			System.out.println("No existe un usuario con esa cédula");
+		} else { //si es negativo no entrï¿½ en el if
+			System.out.println("No existe un usuario con esa cï¿½dula");
 		}
 	}
 	

@@ -1,4 +1,4 @@
-package logic;
+package com.infinityproject.models;
 
 public class Jugador extends Usuario {
 	

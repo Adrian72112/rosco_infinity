@@ -166,7 +166,7 @@ window.onload = initial = () => {
     document.getElementById('cantFaltantes').innerHTML = cantFaltantes;
     document.getElementById('cantCorrectas').innerHTML = cantCorrectas;
     document.getElementById('cantIncorrectas').innerHTML = cantIncorrectas;
-    $tiempoTranscurrido.textContent = msAminYseg(timmer);
+    tiempoTranscurrido.textContent = msAminYseg(timmer);
 }
 
 //focus en el input
@@ -212,20 +212,23 @@ const listaLetras = document.getElementById('lista');
 let respCorrecta, cantCorrectas = 0, cantIncorrectas = 0, cantFaltantes = 25, completarPasapalabra = false;
 
 //Funcion que completa los pasapalabras faltantes (en caso de ser necesario), o ir a la siguiente pregunta 
-function siguientePregunta () {
+function siguientePregunta() {
     if (i == 25 || completarPasapalabra) {
-        //la primera vez entrar por el i despues entra por completarPasapalabra que es true
+        //la primera vez entra por el i despues entra por completarPasapalabra que es true
         completarPasapalabra = true;
         // Refrescar el indice i, con el primer estado.pasapalabra
         let shouldEnter = true;
+
+        //For que recorre todo el array. E = elemento en la posicion indice 
         arrResultados.forEach((e, indice) => {
-            if (shouldEnter == true && e === estado.pasapalabra && (indice >= i || i == 25)){
+            if (shouldEnter == true && e === estado.pasapalabra && (indice >= i || i == 25)) {
                 i = indice;
                 shouldEnter = false;
             }
         });
-        if (shouldEnter == true){
-            i = arrResultados.indexOf(x => x === estado.pasapalabra);
+
+        if (shouldEnter == true) {
+            i = arrResultados.findIndex(x => x == estado.pasapalabra);
         }
 
         if (i != -1) {
@@ -278,14 +281,11 @@ const submitForm = () => {
         refreshContadores();
         siguientePregunta();
     }
-    /*pos = arrResultados.findIndex((resultado) => resultado === estado.pasapalabra)
-    console.log(pos)*/
 }
 
 const pasapalabra = () => {
     listaLetras.children[i].classList.add('estiloPasapalabra');
     if (completarPasapalabra) {
-        // ARREGLAR LOGICA ACA
         arrResultados[i] = estado.pasapalabra;
     }
     else {
@@ -294,19 +294,15 @@ const pasapalabra = () => {
     i++;
     siguientePregunta();
 }
-console.log(i)
 
 //variables pasapalabra
 const pos = 0;
 const index2 = () => {
     pos = arrResultados.findIndex((resultado) => resultado === estado.pasapalabra)
-    // console.log(pos)
 }
 
-//findeindex((i) => i===2), )
-
 //Cronometro
-const $tiempoTranscurrido = document.querySelector(".reloj");
+const tiempoTranscurrido = document.querySelector(".reloj");
 
 let idInterval, tiempoInicio = null, timmer = 300000;
 
@@ -319,31 +315,31 @@ const agregarCero = valor => {
 }
 
 const msAminYseg = (milisegundos) => {
-    const minutos = parseInt(milisegundos / 60000);
-    milisegundos -= minutos * 60 * 1000;
+    minutos = parseInt(milisegundos / 60000); //TE QUEDAS CON LA PARTE ENTERA de los minutos
+    milisegundos -= minutos * 60000;//te quedas con la parte decimal de los minutos
     segundos = (milisegundos / 1000);
     return `${agregarCero(minutos)}:${agregarCero(segundos.toFixed())}`;
 };
 
-const iniciar = () => {
-    $tiempoTranscurrido.textContent = msAminYseg(timmer);
-    timeout = setTimeout(countdown, 1000)
-};
+const detener = () => {
+    // Si queda alguno por contestar y el timmer es distinto de =
+    if (i == 25) {
+        tiempoTranscurrido.textContent = "00:00";
+        clearTimeout(timeout);
+    }
+}
 
 function countdown() {
     timmer -= 1000;
-    $tiempoTranscurrido.textContent = msAminYseg(timmer);
+    tiempoTranscurrido.textContent = msAminYseg(timmer);
     if (timmer <= 0) {
         detener();
-        clearTimeout(timeout);
     } else {
         timeout = setTimeout(countdown, 1000)
     }
 }
 
-const detener = () => {
-    if (i === 25) {
-        $tiempoTranscurrido.textContent = "00:00";
-        timmer = 0;
-    }
+const iniciar = () => {
+    tiempoTranscurrido.textContent = msAminYseg(timmer);
+    timeout = setTimeout(countdown, 1000); //llamar a coundown cada un 1s
 }

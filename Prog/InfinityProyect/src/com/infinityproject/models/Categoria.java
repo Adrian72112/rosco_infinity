@@ -1,4 +1,4 @@
-package logic;
+package com.infinityproject.models;
 import java.util.ArrayList;
 
 public class Categoria {
