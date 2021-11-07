@@ -214,39 +214,44 @@ let respCorrecta, cantCorrectas = 0, cantIncorrectas = 0, cantFaltantes = 25, co
 //Funcion que completa los pasapalabras faltantes (en caso de ser necesario), o ir a la siguiente pregunta 
 function siguientePregunta() {
     if (i == 25 || completarPasapalabra) {
+        // Aca solo vamos a entrar si llegamos a la Z o si estamos en un completar pasapalabra (o sea ya dimos x lo menos una vuelta)
         //la primera vez entra por el i despues entra por completarPasapalabra que es true
         completarPasapalabra = true;
-        // Refrescar el indice i, con el primer estado.pasapalabra
-        let shouldEnter = true;
 
-        //For que recorre todo el array. E = elemento en la posicion indice 
+        // Esta 'flag' es para que si encontramos un indice i siguiente no vuelva a modificarlo
+        let shouldEnter = true;
+        //For que recorre todo el array de estados. e = elemento (estado) en la posicion indice 
         arrResultados.forEach((e, indice) => {
-            if (shouldEnter == true && e === estado.pasapalabra && (indice >= i || i == 25)) {
+            if (shouldEnter == true && e === estado.pasapalabra && indice >= i) {
                 i = indice;
                 shouldEnter = false;
             }
         });
-
+        // La logica anterior no funciona si queremos pasar de un indice mayor a otro menor
+        // Ej: Estamos en X y el pasapalabra siguiente esta en C
         if (shouldEnter == true) {
+            // findIdex nos devuelve el indice del primer estado = pasapalabra en el arrResultados
+            // Devuleve -1 en el caso que no existan estado = pasapalabra
             i = arrResultados.findIndex(x => x == estado.pasapalabra);
         }
 
+        // Chequeamos que exista siguiente pasapalabra
         if (i != -1) {
+            // Si existe le hacemos focus
             next();
             focusInput()
         } else {
+            // Si no existe terminamos el juego
             i = 25;
             detener();
         }
     } else {
         next();
-        detener(i);
         focusInput()
     }
 }
 
 const submitForm = () => {
-
     const valueInput = document.getElementById("respIngresada").value.toUpperCase();
 
     if (valueInput) {
@@ -257,18 +262,16 @@ const submitForm = () => {
             listaLetras.children[i].classList.remove('estiloPasapalabra');
             listaLetras.children[i].classList.add('estiloRespCorrecta');
             cantCorrectas++;
-            cantFaltantes--;
             if (completarPasapalabra) {
                 arrResultados[i] = estado.correcto;
             }
             else {
                 arrResultados.push(estado.correcto);
             }
-        } else if (valueInput != diccionario[i].respCorrecta) {
+        } else {
             listaLetras.children[i].classList.remove('estiloPasapalabra');
             listaLetras.children[i].classList.add('estiloRespIncorrecta');
             cantIncorrectas++;
-            cantFaltantes--;
             if (completarPasapalabra) {
                 arrResultados[i] = estado.incorrecto;
             }
@@ -276,7 +279,7 @@ const submitForm = () => {
                 arrResultados.push(estado.incorrecto);
             }
         }
-
+        cantFaltantes--;
         i++;
         refreshContadores();
         siguientePregunta();
