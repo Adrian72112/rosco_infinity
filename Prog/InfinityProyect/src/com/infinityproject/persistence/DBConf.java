@@ -1,4 +1,4 @@
-package persistence;
+package com.infinityproject.persistence;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,26 +6,25 @@ import java.sql.SQLException;
 
 public class DBConf {
 	// Librera de MySQL
-    public String driver = "com.mysql.cj.jdbc.Driver";
+    private final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
     // Nombre de la base de datos
-    public String database = "Infinity"; //NOMBRE DE NUESTRA BASE DE DATOS
+    private final String DB_NAME = "Infinity"; //NOMBRE DE NUESTRA BASE DE DATOS
 
     // Host
-    public String hostname = "192.168.64.2";
+    private final String HOSTNAME = "localhost";
 
     // Puerto
-    public String port = "3306";
+    public final String PORT = "3306";
 
     // Ruta de nuestra base de datos (desactivamos el uso de SSL con "?useSSL=false")
-    public String url = "jdbc:mysql://" + hostname + ":" + port + "/" + database + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    public final String url = "jdbc:mysql://" + HOSTNAME + ":" + PORT + "/" + DB_NAME + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
-    //CAMI
     // Nombre de usuario
-    public String username = "root";
+    public final String USER_NAME = "root";
 
     // Clave de usuario
-    public String password = "";
+    public final String PASSWORD = "";
 
     //LULU - TENES QUE HACER UN USUARIO
    // public String username = "root";
@@ -37,8 +36,8 @@ public class DBConf {
         Connection conn = null;
 
         try {
-            Class.forName(driver);
-            conn = DriverManager.getConnection(url, username, password);
+            Class.forName(DRIVER);
+            conn = DriverManager.getConnection(url, USER_NAME, PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
