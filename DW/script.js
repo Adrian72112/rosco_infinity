@@ -209,7 +209,7 @@ const refreshContadores = () => {
 
 //variables submitForm()
 const listaLetras = document.getElementById('lista');
-let respCorrecta, cantCorrectas = 0, cantIncorrectas = 0, cantFaltantes = 25, completarPasapalabra = false;
+let respCorrecta, cantCorrectas = 0, cantIncorrectas = 0, cantFaltantes = 25, completarPasapalabra = false, shouldEnter;
 
 //Funcion que completa los pasapalabras faltantes (en caso de ser necesario), o ir a la siguiente pregunta 
 function siguientePregunta () {
@@ -217,7 +217,7 @@ function siguientePregunta () {
         //la primera vez entrar por el i despues entra por completarPasapalabra que es true
         completarPasapalabra = true;
         // Refrescar el indice i, con el primer estado.pasapalabra
-        let shouldEnter = true;
+        shouldEnter = true;
         arrResultados.forEach((e, indice) => {
             if (shouldEnter == true && e === estado.pasapalabra && (indice >= i || i == 25)){
                 i = indice;
