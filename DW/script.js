@@ -175,14 +175,12 @@ focusInput = () => {
 }
 
 //funcion que hace que haga toggle en aparecer o desaparecer un elemento
-const toggleBtn = (idElement) => {
-    if (idElement.classList.contains('hide')) {
-        idElement.classList.remove('hide')
+toggle = (idElement, clase) => {
+    if (idElement.classList.contains(clase)) {
+        idElement.classList.remove(clase)
     } else {
-        idElement.classList.add('hide')
+        idElement.classList.add(clase)
     };
-    focusInput();
-    iniciar();
 }
 
 // Con la tecla enter envia la respuesta
@@ -214,6 +212,44 @@ let respCorrecta, cantCorrectas = 0,
     cantFaltantes = 25,
     completarPasapalabra = false,
     shouldEnter;
+
+
+
+const submitForm = () => {
+    const valueInput = document.getElementById("respIngresada").value.toUpperCase();
+
+    if (valueInput) {
+        //si el usuario no ingresó nada valueInput = false, por lo que no entra al if y no hace nada. si tiene un valor va a ser true y envía. 
+        //Esto se hace para evitar errores de haber mandado la respuesta sin querer
+
+        if (valueInput == diccionario[i].respCorrecta) {
+            listaLetras.children[i].classList.remove('estiloPasapalabra');
+            listaLetras.children[i].classList.add('estiloRespCorrecta');
+            cantCorrectas++;
+            if (completarPasapalabra) {
+                arrResultados[i] = estado.correcto;
+            } else {
+                arrResultados.push(estado.correcto);
+            }
+        } else {
+            listaLetras.children[i].classList.remove('estiloPasapalabra');
+            listaLetras.children[i].classList.add('estiloRespIncorrecta');
+            cantIncorrectas++;
+            if (completarPasapalabra) {
+                arrResultados[i] = estado.incorrecto;
+            } else {
+                arrResultados.push(estado.incorrecto);
+            }
+        }
+        cantFaltantes--;
+        toggle(listaLetras.children[i], 'selected')
+        i++;
+        refreshContadores();
+        siguientePregunta();
+        toggle(listaLetras.children[i], 'selected')
+
+    }
+}
 
 //Funcion que completa los pasapalabras faltantes (en caso de ser necesario), o ir a la siguiente pregunta 
 function siguientePregunta() {
@@ -255,39 +291,6 @@ function siguientePregunta() {
     }
 }
 
-const submitForm = () => {
-    const valueInput = document.getElementById("respIngresada").value.toUpperCase();
-
-    if (valueInput) {
-        //si el usuario no ingresó nada valueInput = false, por lo que no entra al if y no hace nada. si tiene un valor va a ser true y envía. 
-        //Esto se hace para evitar errores de haber mandado la respuesta sin querer
-
-        if (valueInput == diccionario[i].respCorrecta) {
-            listaLetras.children[i].classList.remove('estiloPasapalabra');
-            listaLetras.children[i].classList.add('estiloRespCorrecta');
-            cantCorrectas++;
-            if (completarPasapalabra) {
-                arrResultados[i] = estado.correcto;
-            } else {
-                arrResultados.push(estado.correcto);
-            }
-        } else {
-            listaLetras.children[i].classList.remove('estiloPasapalabra');
-            listaLetras.children[i].classList.add('estiloRespIncorrecta');
-            cantIncorrectas++;
-            if (completarPasapalabra) {
-                arrResultados[i] = estado.incorrecto;
-            } else {
-                arrResultados.push(estado.incorrecto);
-            }
-        }
-        cantFaltantes--;
-        i++;
-        refreshContadores();
-        siguientePregunta();
-    }
-}
-
 const pasapalabra = () => {
     listaLetras.children[i].classList.add('estiloPasapalabra');
     if (completarPasapalabra) {
@@ -295,8 +298,10 @@ const pasapalabra = () => {
     } else {
         arrResultados.push(estado.pasapalabra);
     }
+    toggle(listaLetras.children[i], 'selected')
     i++;
     siguientePregunta();
+    toggle(listaLetras.children[i], 'selected')
 }
 
 //variables pasapalabra

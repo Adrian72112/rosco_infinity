@@ -3,13 +3,17 @@
     visibility: hidden;
 }
 
+.selected {
+    border: white inset 4px;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: white;
     margin: 0;
     background-color: #560074;
     height: 100%;
-    margin: 1% 2%;
+    margin: 1%;
     display: flex;
     justify-content: center;
 }

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <button id="btnEmpezar" onclick="toggleBtn(btnEmpezar)">¡COMENZAR!</button>
+    <button id="btnEmpezar" onclick="toggle(btnEmpezar, 'hide'), iniciar(), focusInput();">¡COMENZAR!</button>
     <div class="all">
 
         <header>
@@ -26,7 +26,7 @@
         <div class="container">
             <div class="rosco">
                 <ul id="lista">
-                    <li style="left: 275px; top: 27px;" class="letter" id="A">A</li>
+                    <li style="left: 275px; top: 27px;" class="letter selected" id="A">A</li>
                     <li style="left: 337px; top: 34px;" class="letter" id="B">B</li>
                     <li style="left: 395px; top: 58px;" class="letter" id="C">C</li>
                     <li style="left: 445px; top: 94px;" class="letter" id="D">D</li>
