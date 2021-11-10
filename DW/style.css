@@ -3,13 +3,17 @@
     visibility: hidden;
 }
 
+.selected {
+    border: white inset 4px;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: white;
     margin: 0;
     background-color: #560074;
     height: 100%;
-    margin: 1% 2%;
+    margin: 1%;
     display: flex;
     justify-content: center;
 }
@@ -50,14 +54,7 @@ h2 {
     line-height: 10px;
 }
 
-
-/* h3 {
-    margin: 0px;
-    font-size: 1.5rem;
-    font-style: italic;
-} */
-
-.containerJuego {
+.container {
     height: 89vh;
     border: 2px solid white;
     border-radius: 3.75rem;
@@ -99,12 +96,6 @@ h2 {
     align-items: center;
     font-weight: bolder;
     font-size: 1.5rem;
-}
-
-.input {
-    text-transform: uppercase;
-    margin: 0 auto;
-    outline: none;
 }
 
 .containerRespuesta {
@@ -223,7 +214,7 @@ h2 {
     margin: 0;
 }
 
-#categoria {
+.titleH3 {
     font-weight: 600;
     font-size: 1rem;
     text-align: center;
@@ -277,6 +268,8 @@ h2 {
     height: 20px;
     margin-right: 10px;
     caret-color: #AFAFAF;
+    text-transform: uppercase;
+    outline: none;
 }
 
 .input::-webkit-input-placeholder {
@@ -298,7 +291,7 @@ h2 {
     margin-top: 40px;
 }
 
-.btnPasapalabra {
+.btnVioleta {
     background: #A60CDC;
     box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.5);
     border-radius: 70px;
@@ -311,4 +304,6 @@ h2 {
     padding: 5px;
     margin: 0 auto;
 }
+
+
 /*/

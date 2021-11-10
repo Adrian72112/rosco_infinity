@@ -1,153 +1,153 @@
 const diccionario = [{
-    letra: 'a', //mayus
-    desc: 'Planta grande',
-    respCorrecta: 'ARBOL', //mayus
-    contiene: false,
-},
-{
-    letra: 'b',
-    desc: 'Animal que aparece en shrek',
-    respCorrecta: 'BURRO',
-    contiene: false,
-},
-{
-    letra: 'c',
-    desc: 'Animal del desierto',
-    respCorrecta: 'CAMELLO',
-    contiene: false,
-},
-{
-    letra: 'd',
-    desc: 'Reptil extinto',
-    respCorrecta: 'DINOSAURIO',
-    contiene: false,
-},
-{
-    letra: 'e',
-    desc: 'Construccion urbana',
-    respCorrecta: 'EDIFICIO',
-    contiene: false,
-},
-{
-    letra: 'f',
-    desc: 'Adjetivo despectivo',
-    respCorrecta: 'FEO',
-    contiene: false,
-},
-{
-    letra: 'g',
-    desc: 'Adjetivo persona obesa',
-    respCorrecta: 'GORDO',
-    contiene: false,
-},
-{
-    letra: 'h',
-    desc: 'Ponen las gallinas',
-    respCorrecta: 'HUEVO',
-    contiene: false,
-},
-{
-    letra: 'i',
-    desc: 'Reptil',
-    respCorrecta: 'IGUANA',
-    contiene: false,
-},
-{
-    letra: 'j',
-    desc: 'Tienen los niños',
-    respCorrecta: 'JUGUETES',
-    contiene: false,
-},
-{
-    letra: 'l',
-    desc: 'Material de una bufanda',
-    respCorrecta: 'LANA',
-    contiene: false,
-},
-{
-    letra: 'm',
-    desc: 'Referido a maternidad',
-    respCorrecta: 'MAMA',
-    contiene: false,
-},
-{
-    letra: 'n',
-    desc: 'Citrico y color',
-    respCorrecta: 'NARANJA',
-    contiene: false,
-},
-{
-    letra: 'ñ',
-    desc: 'Animal propio de Uruguay',
-    respCorrecta: 'ÑANDU',
-    contiene: false,
-},
-{
-    letra: 'o',
-    desc: 'Garoto es una marca de este producto',
-    respCorrecta: 'CHOCOLATE',
-    contiene: true,
-},
-{
-    letra: 'p',
-    desc: 'Ave semi acuatico',
-    respCorrecta: 'PATO',
-    contiene: false,
-},
-{
-    letra: 'q',
-    desc: 'Alimento lacteo',
-    respCorrecta: 'QUESO',
-    contiene: false,
-},
-{
-    letra: 'r',
-    desc: 'Animal que persiguen los gatos',
-    respCorrecta: 'RATON',
-    contiene: false,
-},
-{
-    letra: 's',
-    desc: 'Centro del sistema solar',
-    respCorrecta: 'SOL',
-    contiene: false,
-},
-{
-    letra: 't',
-    desc: 'Donde tomamos te',
-    respCorrecta: 'TAZA',
-    contiene: false,
-},
-{
-    letra: 'u',
-    desc: 'Herramienta para tomar sopa',
-    respCorrecta: 'CUCHARA',
-    contiene: true,
-},
-{
-    letra: 'v',
-    desc: 'Hay mucho en la rambla. Clima',
-    respCorrecta: 'VIENTO',
-    contiene: false,
-},
-{
-    letra: 'x',
-    desc: 'Instrumento',
-    respCorrecta: 'XILOFONO',
-    contiene: false,
-},
-{
-    letra: 'y',
-    desc: 'Parte de dentro del huevo',
-    respCorrecta: 'YEMA',
-    contiene: false,
-},
-{
-    letra: 'z',
-    desc: 'Calzado',
-    respCorrecta: 'ZAPATO',
-    contiene: false,
-}
+        letra: 'a', //mayus
+        desc: 'Planta grande',
+        respCorrecta: 'ARBOL', //mayus
+        contiene: false,
+    },
+    {
+        letra: 'b',
+        desc: 'Animal que aparece en shrek',
+        respCorrecta: 'BURRO',
+        contiene: false,
+    },
+    {
+        letra: 'c',
+        desc: 'Animal del desierto',
+        respCorrecta: 'CAMELLO',
+        contiene: false,
+    },
+    {
+        letra: 'd',
+        desc: 'Reptil extinto',
+        respCorrecta: 'DINOSAURIO',
+        contiene: false,
+    },
+    {
+        letra: 'e',
+        desc: 'Construccion urbana',
+        respCorrecta: 'EDIFICIO',
+        contiene: false,
+    },
+    {
+        letra: 'f',
+        desc: 'Adjetivo despectivo',
+        respCorrecta: 'FEO',
+        contiene: false,
+    },
+    {
+        letra: 'g',
+        desc: 'Adjetivo persona obesa',
+        respCorrecta: 'GORDO',
+        contiene: false,
+    },
+    {
+        letra: 'h',
+        desc: 'Ponen las gallinas',
+        respCorrecta: 'HUEVO',
+        contiene: false,
+    },
+    {
+        letra: 'i',
+        desc: 'Reptil',
+        respCorrecta: 'IGUANA',
+        contiene: false,
+    },
+    {
+        letra: 'j',
+        desc: 'Tienen los niños',
+        respCorrecta: 'JUGUETES',
+        contiene: false,
+    },
+    {
+        letra: 'l',
+        desc: 'Material de una bufanda',
+        respCorrecta: 'LANA',
+        contiene: false,
+    },
+    {
+        letra: 'm',
+        desc: 'Referido a maternidad',
+        respCorrecta: 'MAMA',
+        contiene: false,
+    },
+    {
+        letra: 'n',
+        desc: 'Citrico y color',
+        respCorrecta: 'NARANJA',
+        contiene: false,
+    },
+    {
+        letra: 'ñ',
+        desc: 'Animal propio de Uruguay',
+        respCorrecta: 'ÑANDU',
+        contiene: false,
+    },
+    {
+        letra: 'o',
+        desc: 'Garoto es una marca de este producto',
+        respCorrecta: 'CHOCOLATE',
+        contiene: true,
+    },
+    {
+        letra: 'p',
+        desc: 'Ave semi acuatico',
+        respCorrecta: 'PATO',
+        contiene: false,
+    },
+    {
+        letra: 'q',
+        desc: 'Alimento lacteo',
+        respCorrecta: 'QUESO',
+        contiene: false,
+    },
+    {
+        letra: 'r',
+        desc: 'Animal que persiguen los gatos',
+        respCorrecta: 'RATON',
+        contiene: false,
+    },
+    {
+        letra: 's',
+        desc: 'Centro del sistema solar',
+        respCorrecta: 'SOL',
+        contiene: false,
+    },
+    {
+        letra: 't',
+        desc: 'Donde tomamos te',
+        respCorrecta: 'TAZA',
+        contiene: false,
+    },
+    {
+        letra: 'u',
+        desc: 'Herramienta para tomar sopa',
+        respCorrecta: 'CUCHARA',
+        contiene: true,
+    },
+    {
+        letra: 'v',
+        desc: 'Hay mucho en la rambla. Clima',
+        respCorrecta: 'VIENTO',
+        contiene: false,
+    },
+    {
+        letra: 'x',
+        desc: 'Instrumento',
+        respCorrecta: 'XILOFONO',
+        contiene: false,
+    },
+    {
+        letra: 'y',
+        desc: 'Parte de dentro del huevo',
+        respCorrecta: 'YEMA',
+        contiene: false,
+    },
+    {
+        letra: 'z',
+        desc: 'Calzado',
+        respCorrecta: 'ZAPATO',
+        contiene: false,
+    }
 
 ];
 
@@ -175,18 +175,16 @@ focusInput = () => {
 }
 
 //funcion que hace que haga toggle en aparecer o desaparecer un elemento
-const toggleBtn = (idElement) => {
-    if (idElement.classList.contains('hide')) {
-        idElement.classList.remove('hide')
+toggle = (idElement, clase) => {
+    if (idElement.classList.contains(clase)) {
+        idElement.classList.remove(clase)
     } else {
-        idElement.classList.add('hide')
+        idElement.classList.add(clase)
     };
-    focusInput();
-    iniciar();
 }
 
 // Con la tecla enter envia la respuesta
-document.addEventListener('keypress', function (e) {
+document.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         submitForm();
     }
@@ -209,7 +207,49 @@ const refreshContadores = () => {
 
 //variables submitForm()
 const listaLetras = document.getElementById('lista');
-let respCorrecta, cantCorrectas = 0, cantIncorrectas = 0, cantFaltantes = 25, completarPasapalabra = false;
+let respCorrecta, cantCorrectas = 0,
+    cantIncorrectas = 0,
+    cantFaltantes = 25,
+    completarPasapalabra = false,
+    shouldEnter;
+
+
+
+const submitForm = () => {
+    const valueInput = document.getElementById("respIngresada").value.toUpperCase();
+
+    if (valueInput) {
+        //si el usuario no ingresó nada valueInput = false, por lo que no entra al if y no hace nada. si tiene un valor va a ser true y envía. 
+        //Esto se hace para evitar errores de haber mandado la respuesta sin querer
+
+        if (valueInput == diccionario[i].respCorrecta) {
+            listaLetras.children[i].classList.remove('estiloPasapalabra');
+            listaLetras.children[i].classList.add('estiloRespCorrecta');
+            cantCorrectas++;
+            if (completarPasapalabra) {
+                arrResultados[i] = estado.correcto;
+            } else {
+                arrResultados.push(estado.correcto);
+            }
+        } else {
+            listaLetras.children[i].classList.remove('estiloPasapalabra');
+            listaLetras.children[i].classList.add('estiloRespIncorrecta');
+            cantIncorrectas++;
+            if (completarPasapalabra) {
+                arrResultados[i] = estado.incorrecto;
+            } else {
+                arrResultados.push(estado.incorrecto);
+            }
+        }
+        cantFaltantes--;
+        toggle(listaLetras.children[i], 'selected')
+        i++;
+        refreshContadores();
+        siguientePregunta();
+        toggle(listaLetras.children[i], 'selected')
+
+    }
+}
 
 //Funcion que completa los pasapalabras faltantes (en caso de ser necesario), o ir a la siguiente pregunta 
 function siguientePregunta() {
@@ -217,7 +257,7 @@ function siguientePregunta() {
         // Aca solo vamos a entrar si llegamos a la Z o si estamos en un completar pasapalabra (o sea ya dimos x lo menos una vuelta)
         //la primera vez entra por el i despues entra por completarPasapalabra que es true
         completarPasapalabra = true;
-
+        // Refrescar el indice i, con el primer estado.pasapalabra
         // Esta 'flag' es para que si encontramos un indice i siguiente no vuelva a modificarlo
         let shouldEnter = true;
         //For que recorre todo el array de estados. e = elemento (estado) en la posicion indice 
@@ -251,51 +291,17 @@ function siguientePregunta() {
     }
 }
 
-const submitForm = () => {
-    const valueInput = document.getElementById("respIngresada").value.toUpperCase();
-
-    if (valueInput) {
-        //si el usuario no ingresó nada valueInput = false, por lo que no entra al if y no hace nada. si tiene un valor va a ser true y envía. 
-        //Esto se hace para evitar errores de haber mandado la respuesta sin querer
-
-        if (valueInput == diccionario[i].respCorrecta) {
-            listaLetras.children[i].classList.remove('estiloPasapalabra');
-            listaLetras.children[i].classList.add('estiloRespCorrecta');
-            cantCorrectas++;
-            if (completarPasapalabra) {
-                arrResultados[i] = estado.correcto;
-            }
-            else {
-                arrResultados.push(estado.correcto);
-            }
-        } else {
-            listaLetras.children[i].classList.remove('estiloPasapalabra');
-            listaLetras.children[i].classList.add('estiloRespIncorrecta');
-            cantIncorrectas++;
-            if (completarPasapalabra) {
-                arrResultados[i] = estado.incorrecto;
-            }
-            else {
-                arrResultados.push(estado.incorrecto);
-            }
-        }
-        cantFaltantes--;
-        i++;
-        refreshContadores();
-        siguientePregunta();
-    }
-}
-
 const pasapalabra = () => {
     listaLetras.children[i].classList.add('estiloPasapalabra');
     if (completarPasapalabra) {
         arrResultados[i] = estado.pasapalabra;
-    }
-    else {
+    } else {
         arrResultados.push(estado.pasapalabra);
     }
+    toggle(listaLetras.children[i], 'selected')
     i++;
     siguientePregunta();
+    toggle(listaLetras.children[i], 'selected')
 }
 
 //variables pasapalabra
@@ -307,7 +313,8 @@ const index2 = () => {
 //Cronometro
 const tiempoTranscurrido = document.querySelector(".reloj");
 
-let idInterval, tiempoInicio = null, timmer = 300000;
+let idInterval, tiempoInicio = null,
+    timmer = 300000;
 
 const agregarCero = valor => {
     if (valor < 10) {
@@ -319,7 +326,7 @@ const agregarCero = valor => {
 
 const msAminYseg = (milisegundos) => {
     minutos = parseInt(milisegundos / 60000); //TE QUEDAS CON LA PARTE ENTERA de los minutos
-    milisegundos -= minutos * 60000;//te quedas con la parte decimal de los minutos
+    milisegundos -= minutos * 60000; //te quedas con la parte decimal de los minutos
     segundos = (milisegundos / 1000);
     return `${agregarCero(minutos)}:${agregarCero(segundos.toFixed())}`;
 };
