@@ -55,7 +55,7 @@ h2 {
 }
 
 .container {
-    height: 89vh;
+    height: 85vh;
     border: 2px solid white;
     border-radius: 3.75rem;
     position: relative;
@@ -231,13 +231,14 @@ h2 {
 
 #definition {
     font-style: italic;
-    line-height: 1.5rem;
-    font-size: 1.6rem;
+    line-height: 35px;
+    font-size: 1.5rem;
     height: 5rem;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .containerInput {
@@ -288,7 +289,7 @@ h2 {
 .textPasapalabra {
     font-size: 0.9rem;
     font-weight: bold;
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 .btnVioleta {

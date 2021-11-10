@@ -213,8 +213,6 @@ let respCorrecta, cantCorrectas = 0,
     completarPasapalabra = false,
     shouldEnter;
 
-
-
 const submitForm = () => {
     const valueInput = document.getElementById("respIngresada").value.toUpperCase();
 
@@ -259,17 +257,17 @@ function siguientePregunta() {
         completarPasapalabra = true;
         // Refrescar el indice i, con el primer estado.pasapalabra
         // Esta 'flag' es para que si encontramos un indice i siguiente no vuelva a modificarlo
-        let shouldEnter = true;
+        shouldEnter = true;
         //For que recorre todo el array de estados. e = elemento (estado) en la posicion indice 
         arrResultados.forEach((e, indice) => {
-            if (shouldEnter == true && e === estado.pasapalabra && indice >= i) {
+            if (shouldEnter && e === estado.pasapalabra && indice >= i) {
                 i = indice;
                 shouldEnter = false;
             }
         });
         // La logica anterior no funciona si queremos pasar de un indice mayor a otro menor
         // Ej: Estamos en X y el pasapalabra siguiente esta en C
-        if (shouldEnter == true) {
+        if (shouldEnter) {
             // findIdex nos devuelve el indice del primer estado = pasapalabra en el arrResultados
             // Devuleve -1 en el caso que no existan estado = pasapalabra
             i = arrResultados.findIndex(x => x == estado.pasapalabra);
