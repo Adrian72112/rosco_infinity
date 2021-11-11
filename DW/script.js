@@ -289,6 +289,8 @@ function siguientePregunta() {
     }
 }
 
+//Variables pasapalabra
+
 const pasapalabra = () => {
     listaLetras.children[i].classList.add('estiloPasapalabra');
     if (completarPasapalabra) {
@@ -300,12 +302,6 @@ const pasapalabra = () => {
     i++;
     siguientePregunta();
     toggle(listaLetras.children[i], 'selected')
-}
-
-//variables pasapalabra
-const pos = 0;
-const index2 = () => {
-    pos = arrResultados.findIndex((resultado) => resultado === estado.pasapalabra)
 }
 
 //Cronometro
@@ -351,4 +347,3 @@ const iniciar = () => {
     tiempoTranscurrido.textContent = msAminYseg(timmer);
     timeout = setTimeout(countdown, 1000); //llamar a coundown cada un 1s
 }
-//probando
