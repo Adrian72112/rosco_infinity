@@ -27,7 +27,7 @@ public class ManejadorPalabraBD {
 		Statement stmt = con.createStatement();
 		
 		// INSERT INTO .... VALUES(48704997,'A','planta grande', true);
-		String insert = "INSERT INTO palabra(letra, definicion, empiezaPor) VALUES('" + palabra.getLetra() + "', '" + palabra.getDefinicion() + "', " + palabra.getEmpiezaPor() + ";)" ;
+		String insert = "INSERT INTO palabra(letra, definicion, contiene) VALUES('" + palabra.getLetra() + "', '" + palabra.getDefinicion() + "', " + palabra.getContiene() + ";)" ;
 		
 		stmt.executeUpdate(insert);
 		

@@ -4,18 +4,18 @@ public class CreatePalabraDTO {
 	private char letra;
 	private String definicion;
 	private int codigo;
-	private boolean empiezaPor;
+	private boolean contiene;
 	private int cantidadRespondida;
 	private int cantidadRespondidaCorrectamente;
 	private String palabra;
 	
-	public CreatePalabraDTO(char letra, String definicion, int codigo, boolean empiezaPor, int cantidadRespondida,
+	public CreatePalabraDTO(char letra, String definicion, int codigo, boolean contiene, int cantidadRespondida,
 			int cantidadRespondidaCorrectamente, String palabra) {
 		super();
 		this.letra = letra;
 		this.definicion = definicion;
 		this.codigo = codigo;
-		this.empiezaPor = empiezaPor;
+		this.contiene = contiene;
 		this.cantidadRespondida = cantidadRespondida;
 		this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
 		this.palabra = palabra;
@@ -45,12 +45,12 @@ public class CreatePalabraDTO {
 		this.codigo = codigo;
 	}
 
-	public boolean isEmpiezaPor() {
-		return empiezaPor;
+	public boolean isContiene() {
+		return contiene;
 	}
 
-	public void setEmpiezaPor(boolean empiezaPor) {
-		this.empiezaPor = empiezaPor;
+	public void setContiene(boolean contiene) {
+		this.contiene = contiene;
 	}
 
 	public int getCantidadRespondida() {

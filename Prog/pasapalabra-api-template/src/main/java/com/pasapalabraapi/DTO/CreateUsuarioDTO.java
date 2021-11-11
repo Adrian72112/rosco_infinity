@@ -1,5 +1,7 @@
 package com.pasapalabraapi.DTO;
 
+import com.pasapalabraapi.logic.Usuario;
+
 public class CreateUsuarioDTO {
 	private int ci;
 	private int pin;

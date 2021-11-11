@@ -5,29 +5,29 @@ public class Palabra {
 	 private char letra ;
 	 private String palabra, definicion, categoria;
 	 private int codigo, cantidadRespondida, cantidadRespondidaCorrectamente, frecuencia; 
-	 private boolean empiezaPor;
+	 private boolean contiene;
 	 
 	 public Palabra() {
 		 
 	 }
 
 	 public Palabra(char letra, String definicion, int codigo, int cantidadRespondida,
-			int cantidadRespondidaCorrectamente, boolean empiezaPor,
+			int cantidadRespondidaCorrectamente, boolean contiene,
 			String categoria, int frecuencia) {
 		this.letra = letra;
 		this.definicion = definicion;
 		this.codigo = codigo;
 		this.cantidadRespondida = cantidadRespondida;
 		this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
-		this.empiezaPor = empiezaPor;
+		this.contiene = contiene;
 		this.categoria = categoria;
 		this.frecuencia = frecuencia;
 	}
 
-	public Palabra(char letra, String definicion, boolean empiezaPor) {
+	public Palabra(char letra, String definicion, boolean contiene) {
 		this.letra = letra;
 		this.definicion = definicion;
-		this.empiezaPor = empiezaPor;
+		this.contiene = contiene;
 	}
 
 	public char getLetra() {
@@ -70,12 +70,12 @@ public class Palabra {
 		this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
 	}
 
-	public boolean getEmpiezaPor() {
-		return empiezaPor;
+	public boolean getContiene() {
+		return contiene;
 	}
 
-	public void setEmpiezaPor(boolean empiezaPor) {
-		this.empiezaPor = empiezaPor;
+	public void setContiene(boolean contiene) {
+		this.contiene = contiene;
 	}
 
 	public String getCategoria() {
@@ -101,6 +101,5 @@ public class Palabra {
 	public void setPalabra(String palabra) {
 		this.palabra = palabra;
 	}
-
 	 
 }
