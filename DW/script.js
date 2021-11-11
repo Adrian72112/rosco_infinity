@@ -351,3 +351,4 @@ const iniciar = () => {
     tiempoTranscurrido.textContent = msAminYseg(timmer);
     timeout = setTimeout(countdown, 1000); //llamar a coundown cada un 1s
 }
+//probando
