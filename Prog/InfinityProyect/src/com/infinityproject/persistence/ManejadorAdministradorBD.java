@@ -24,7 +24,7 @@ public class ManejadorAdministradorBD {
 		stmt.executeUpdate(insert);
 		
 		// Insertar en la tabla Administrador, ref a Usuario
-		insert = "INSERT INTO administrador(cedula)" + "VALUES(" + admin.getCi() + ");";
+		insert = "INSERT INTO Administrador(cedula)" + "VALUES(" + admin.getCi() + ");";
 		
 		stmt.executeUpdate(insert);
 		

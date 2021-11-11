@@ -1,4 +1,5 @@
 package com.infinityproject.models;
+
 import java.util.ArrayList;
 
 public class Categoria {
@@ -27,8 +28,6 @@ public class Categoria {
 
 	public void setPalabras(ArrayList<Palabra> palabras) {
 		this.palabras = palabras;
-	}
-	
-	
+	}	
 
 }

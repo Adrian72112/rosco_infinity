@@ -59,14 +59,14 @@ public class ManejadorPalabraBD {
 		}
 			
 		// Obtenemos las letras de la base de datos "a,b,c,d,e...."
-		String query = "SELECT distinct letra FROM PALABRA;";
+		String query = "SELECT distinct letra FROM Palabra;";
 		ResultSet rs = stmt.executeQuery(query);
 		
 		// rs.next va a recorrer a --> b --> c --> d...
 		while (rs.next()) {
 			String letra = rs.getString("letra");
 			// Por cada letra, obtenemos su informacion correspondiente
-			String obtenerPalabra = "SELECT * FROM palabra WHERE letra = '" + letra + "'" + queryCategoria + " order by frecuencia asc limit 1;";
+			String obtenerPalabra = "SELECT * FROM Palabra WHERE letra = '" + letra + "'" + queryCategoria + " order by frecuencia asc limit 1;";
 			ResultSet rsPalabra = stmt.executeQuery(obtenerPalabra);
 			
 			if (rsPalabra.first()) {
@@ -79,7 +79,6 @@ public class ManejadorPalabraBD {
 		return listaPalabras;
 		
 	}
-
 
 	private Palabra obtenerPalabra(ResultSet rsPalabra) throws SQLException {
 		Palabra palabra = new Palabra();
@@ -94,12 +93,11 @@ public class ManejadorPalabraBD {
 		return palabra;
 	}
 
-
 	public ArrayList<Palabra> obtenerTop10PalabrasMasDificiles()throws SQLException {
 		Connection con = ConnectToDb();
 		Statement stmt = con.createStatement();
 		
-			String query = "SELECT * FROM palabra order by (cantidadRespondida - cantidadRespondidaCorrectamente) desc limit 10;";
+			String query = "SELECT * FROM Palabra order by (cantidadRespondida - cantidadRespondidaCorrectamente) desc limit 10;";
 			ResultSet rsPalabra = stmt.executeQuery(query);
 			
 			while (rsPalabra.next()) {
@@ -110,6 +108,5 @@ public class ManejadorPalabraBD {
 			}
 		return listaPalabras;
 	}
-
 	
 }
