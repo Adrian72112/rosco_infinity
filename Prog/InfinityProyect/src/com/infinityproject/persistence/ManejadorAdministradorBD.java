@@ -35,7 +35,7 @@ public class ManejadorAdministradorBD {
 		Connection con = ConnectToDb();
 		Statement stmt = con.createStatement();
 		
-		String delete = "DELETE FROM administradores WHERE ci = " + ci + " AND pin = '" + pinA + "';";
+		String delete = "DELETE FROM Administrador WHERE ci = " + ci + " AND pin = '" + pinA + "';";
 		
 		stmt.executeUpdate(delete);
 	}
