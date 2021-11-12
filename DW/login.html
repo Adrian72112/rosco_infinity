@@ -9,6 +9,8 @@
 
     <link rel="icon" href="./img/logo.png" />
     <link rel="stylesheet" href="style_login.css" />
+    <link rel="stylesheet" href="style.css" />
+
 
 </head>
 
@@ -24,9 +26,12 @@
 
         <div class="container">
             <h3>Iniciar sesión</h3>
-            <input class="input" id="usuario" name="usuario" type="text" placeholder="USUARIO" autocomplete>
-            <input class="input" id="pass" name="pass" type="password" placeholder="CONTRASEÑA" autocomplete>
-            <button class="btnListo" onclick="location.href='./juego.html'; ">Enviar</button>
+            <form action="loader.html">
+
+                <input class="input" id="cedula" name="cedula" type="number" placeholder="CEDULA" required>
+                <input class="input" id="pin" name="pin" type="password" placeholder="PIN" required>
+                <button type="submit" class="btnListo">Enviar</button>
+            </form>
         </div>
     </div>
 

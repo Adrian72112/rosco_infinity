@@ -9,12 +9,37 @@
 
     <link rel="icon" href="./img/logo.png" />
     <link rel="stylesheet" href="style_register.css" />
+    <link rel="stylesheet" href="style.css" />
+
 
 </head>
 
 <body>
 
-    <button onclick="location.href='./juego.html'">CREAR CUENTA</button>
+    <div class="all">
+        <header>
+            <div class="logo">
+                <h2>by Infinity</h2>
+                <h1>PASAPALABRA</h1>
+            </div>
+        </header>
+
+        <div class="container">
+            <h3>Crear cuenta</h3>
+            <form action="loader.html">
+                <div class="flex">
+                    <input class="input" id="cedula" name="cedula" type="number" placeholder="CEDULA" required>
+                    <input class="input" id="pin" name="pin" type="password" placeholder="PIN" required>
+                </div>
+                <div class="flex">
+                    <input class="input" id="nombre" name="nombre" type="text" placeholder="NOMBRE" required>
+                    <input class="input" id="apellido" name="apellido" type="text" placeholder="APELLIDO" required>
+                </div>
+                <input class="input" id="mail" name="mail" type="email" placeholder="mail" autocomplete required>
+                <button type="submit" class="btnListo">Enviar</button>
+            </form>
+        </div>
+    </div>
 
 </body>
 <script src="./script.js"></script>

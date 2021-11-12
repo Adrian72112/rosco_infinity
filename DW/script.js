@@ -1,6 +1,6 @@
 const diccionario = [{
         letra: 'a', //mayus
-        desc: 'Planta grande',
+        desc: 'Planta grande ',
         respCorrecta: 'ARBOL', //mayus
         contiene: false,
     },
@@ -346,4 +346,9 @@ function countdown() {
 const iniciar = () => {
     tiempoTranscurrido.textContent = msAminYseg(timmer);
     timeout = setTimeout(countdown, 1000); //llamar a coundown cada un 1s
+}
+
+//loading
+const redirect = () => {
+
 }

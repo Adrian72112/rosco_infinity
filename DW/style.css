@@ -1,0 +1,9 @@
+.scroll {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+html {
+    position: fixed;
+    overflow-y: scroll
+}

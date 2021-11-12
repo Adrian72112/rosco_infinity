@@ -9,22 +9,26 @@
 
     <link rel="icon" href="./img/logo.png" />
     <link rel="stylesheet" href="style_juego.css" />
+    <link rel="stylesheet" href="style.css" />
+
 
 </head>
 
 <body>
-    <button id="btnEmpezar" onclick="toggle(btnEmpezar, 'hide'), iniciar(), focusInput();">¡COMENZAR!</button>
-    <div class="all">
 
+    <div class="all">
+        <p class="prep" id="text">¿Preparados?</p>
+        <p class="listos" id="text2">¿Listos?</p>
+        <button id="btnEmpezar" onclick="toggle(btnEmpezar, 'hide'), toggle(text, 'hide'), toggle(text2, 'hide'), toggle(rosco, 'hide'), toggle(footer, 'hide'), iniciar(), focusInput();">¡YA!</button>
         <header>
             <div class="logo">
                 <h2>by Infinity</h2>
                 <h1>PASAPALABRA</h1>
             </div>
         </header>
-
         <div class="container">
-            <div class="rosco">
+            <p id="categoria">Categoría: Random</p>
+            <div class="rosco hide" id="rosco">
                 <ul id="lista">
                     <li style="left: 275px; top: 27px;" class="letter selected" id="A">A</li>
                     <li style="left: 337px; top: 34px;" class="letter" id="B">B</li>
@@ -55,11 +59,12 @@
                 <div class="rosco_center">
 
                     <div class="containerTextInfo">
-                        <p id="condicion"></p>
-                        <p id="categoria" class="titleH3">Categoría: Random</p>
+
+
                         <p id="definition"></p>
                     </div>
                     <div class="containerRespuesta">
+                        <p id="condicion" class="titleH3"></p>
                         <div class="containerInput">
                             <input class="input" id="respIngresada" name="respuesta" type="text" placeholder="TU RESPUESTA...">
                             <button class="btnEnviar" type="submit" onclick="submitForm()"><img class="iconListo" src="./img/icon_listo.png" alt="icon listo"></button>
@@ -70,7 +75,7 @@
 
                 </div>
             </div>
-            <div class="footer">
+            <div class="footer hide" id="footer">
                 <div class="reloj_cantFaltan">
                     <p class="reloj"></p>
 
