@@ -1,4 +1,4 @@
-package com.infinityproject.logic;
+package com.pasapalabraapi.logic;
 
 public class Main {
 

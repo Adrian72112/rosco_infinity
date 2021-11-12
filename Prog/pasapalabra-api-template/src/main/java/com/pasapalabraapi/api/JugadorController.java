@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.pasapalabraapi.DTO.CreateUsuarioDTO;
+import com.pasapalabraapi.logic.Usuario;
 
 @Controller
 public class JugadorController {

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.pasapalabraapi.DTO.LoginDTO;
+import com.pasapalabraapi.logic.Usuario;
 
 public class LoginController {
 	

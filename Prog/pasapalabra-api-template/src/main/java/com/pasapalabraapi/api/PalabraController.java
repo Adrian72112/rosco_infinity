@@ -15,6 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.pasapalabraapi.DTO.CreatePalabraDTO;
 import com.pasapalabraapi.DTO.CreateUsuarioDTO;
 import com.pasapalabraapi.DTO.DeletePalabraDTO;
+import com.pasapalabraapi.logic.Palabra;
 
 @Controller
 public class PalabraController {

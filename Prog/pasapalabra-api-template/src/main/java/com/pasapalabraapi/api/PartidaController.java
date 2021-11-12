@@ -14,6 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.pasapalabraapi.DTO.CreatePartidaDTO;
 import com.pasapalabraapi.DTO.FinalizarPartidaDTO;
+import com.pasapalabraapi.logic.Partida;
 
 @Controller
 public class PartidaController {

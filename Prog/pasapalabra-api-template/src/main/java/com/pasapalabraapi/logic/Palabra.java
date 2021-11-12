@@ -1,24 +1,33 @@
-package com.pasapalabraapi.DTO;
+package com.pasapalabraapi.logic;
 
-public class CreatePalabraDTO {
-	private char letra;
-	private String definicion;
-	private int codigo;
-	private boolean contiene;
-	private int cantidadRespondida;
-	private int cantidadRespondidaCorrectamente;
-	private String palabra;
-	
-	public CreatePalabraDTO(char letra, String definicion, int codigo, boolean contiene, int cantidadRespondida,
-			int cantidadRespondidaCorrectamente, String palabra) {
-		super();
+public class Palabra {
+
+	 private char letra ;
+	 private String palabra, definicion, categoria;
+	 private int codigo, cantidadRespondida, cantidadRespondidaCorrectamente, frecuencia; 
+	 private boolean contiene;
+	 
+	 public Palabra() {
+		 
+	 }
+
+	 public Palabra(char letra, String definicion, int codigo, int cantidadRespondida,
+			int cantidadRespondidaCorrectamente, boolean contiene,
+			String categoria, int frecuencia) {
 		this.letra = letra;
 		this.definicion = definicion;
 		this.codigo = codigo;
-		this.contiene = contiene;
 		this.cantidadRespondida = cantidadRespondida;
 		this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
-		this.palabra = palabra;
+		this.contiene = contiene;
+		this.categoria = categoria;
+		this.frecuencia = frecuencia;
+	}
+
+	public Palabra(char letra, String definicion, boolean contiene) {
+		this.letra = letra;
+		this.definicion = definicion;
+		this.contiene = contiene;
 	}
 
 	public char getLetra() {
@@ -45,14 +54,6 @@ public class CreatePalabraDTO {
 		this.codigo = codigo;
 	}
 
-	public boolean isContiene() {
-		return contiene;
-	}
-
-	public void setContiene(boolean contiene) {
-		this.contiene = contiene;
-	}
-
 	public int getCantidadRespondida() {
 		return cantidadRespondida;
 	}
@@ -69,6 +70,30 @@ public class CreatePalabraDTO {
 		this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
 	}
 
+	public boolean getContiene() {
+		return contiene;
+	}
+
+	public void setContiene(boolean contiene) {
+		this.contiene = contiene;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public int getFrecuencia() {
+		return frecuencia;
+	}
+
+	public void setFrecuencia(int frecuencia) {
+		this.frecuencia = frecuencia;
+	}
+
 	public String getPalabra() {
 		return palabra;
 	}
@@ -76,6 +101,5 @@ public class CreatePalabraDTO {
 	public void setPalabra(String palabra) {
 		this.palabra = palabra;
 	}
-	
-	
+	 
 }

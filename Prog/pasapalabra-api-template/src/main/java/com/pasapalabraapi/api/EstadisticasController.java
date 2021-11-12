@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.pasapalabraapi.logic.Jugador;
+import com.pasapalabraapi.logic.Palabra;
+
 @Controller
 public class EstadisticasController {
 	
