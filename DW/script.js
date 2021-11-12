@@ -159,7 +159,7 @@ const estado = {
     pasapalabra: 2
 }
 
-//al cargar la pagina le pasa el valor de la letra A (indice 0 en el diccionario) a los elementos 
+//al cargar la pagina le pasa el valor de la letra A (indice 0 en el diccionario) a los elementos...
 window.onload = initial = () => {
     document.getElementById('definition').innerHTML = diccionario[0].desc;
     document.getElementById('condicion').innerHTML = diccionario[0].contiene == false ? `EMPIEZA CON ${diccionario[0].letra.toUpperCase()}` : `CONTIENE ${diccionario[0].letra.toUpperCase()}`;
