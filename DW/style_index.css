@@ -22,17 +22,39 @@ body {
     font-family: 'Poppins', sans-serif;
     color: white;
     font-weight: bold;
-    width: 200px;
-    font-size: 1.2rem;
-    padding: 5px;
+    width: 300px;
+    font-size: 1.5rem;
+    padding: 8px;
     margin: 0 auto;
-}
-
-.container_index {
-    margin-top: 10%;
 }
 
 .title_index {
     font-size: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 70px;
+}
+
+h2 {
+    margin: 0px;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 10px;
+}
+
+h1 {
+    margin: 0px;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.logo {
+    margin: 10% 0 25% 0;
+}
+
+.containerBtn_index {
+    display: flex;
+    justify-content: space-around;
 }
