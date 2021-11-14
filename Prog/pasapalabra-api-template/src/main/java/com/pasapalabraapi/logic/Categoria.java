@@ -3,10 +3,10 @@ package com.pasapalabraapi.logic;
 import java.util.ArrayList;
 
 public class Categoria {
-	
+
 	private String nombre;
 
-	public ArrayList<Palabra> palabras = new ArrayList();
+	public ArrayList<Palabra> palabras = new ArrayList<Palabra>();
 
 	public Categoria(String nombre, ArrayList<Palabra> palabras) {
 		super();
@@ -28,6 +28,6 @@ public class Categoria {
 
 	public void setPalabras(ArrayList<Palabra> palabras) {
 		this.palabras = palabras;
-	}	
+	}
 
 }

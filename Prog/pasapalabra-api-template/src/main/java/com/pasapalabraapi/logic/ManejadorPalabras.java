@@ -3,7 +3,6 @@ package com.pasapalabraapi.logic;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.pasapalabraapi.logic.Palabra;
 import com.pasapalabraapi.persistence.ManejadorPalabraBD;
 
 public class ManejadorPalabras {
@@ -35,6 +34,5 @@ public class ManejadorPalabras {
 	public ArrayList<Palabra> obtenerTop10PalabrasMasDificiles() throws SQLException {
 	//Devuelve un ArrayList de Palabras, con el top 10 palabra cuyo índice de respuesta incorrecta sea más cercano a 1
 		return manejadorBD.obtenerTop10PalabrasMasDificiles();
-
 	}
 }

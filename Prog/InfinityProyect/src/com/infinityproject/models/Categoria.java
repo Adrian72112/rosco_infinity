@@ -6,7 +6,7 @@ public class Categoria {
 	
 	private String nombre;
 
-	public ArrayList<Palabra> palabras = new ArrayList();
+	public ArrayList<Palabra> palabras = new ArrayList<Palabra>();
 
 	public Categoria(String nombre, ArrayList<Palabra> palabras) {
 		super();

@@ -2,26 +2,24 @@ package com.pasapalabraapi.logic;
 
 public class Palabra {
 
-	 private char letra ;
-	 private String palabra, definicion, categoria;
-	 private int codigo, cantidadRespondida, cantidadRespondidaCorrectamente, frecuencia; 
-	 private boolean contiene;
-	 
-	 public Palabra() {
-		 
-	 }
+	private char letra;
+	private String palabra, definicion, categoria;
+	private int codigo, cantVecesCorrecta, cantUsada;
+	private boolean contiene;
 
-	 public Palabra(char letra, String definicion, int codigo, int cantidadRespondida,
-			int cantidadRespondidaCorrectamente, boolean contiene,
-			String categoria, int frecuencia) {
+	public Palabra() {
+
+	}
+
+	public Palabra(char letra, String definicion, int codigo, int cantVecesCorrecta, boolean contiene, String categoria,
+			int cantUsada) {
 		this.letra = letra;
 		this.definicion = definicion;
 		this.codigo = codigo;
-		this.cantidadRespondida = cantidadRespondida;
-		this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
+		this.cantVecesCorrecta = cantVecesCorrecta;
 		this.contiene = contiene;
 		this.categoria = categoria;
-		this.frecuencia = frecuencia;
+		this.cantUsada = cantUsada;
 	}
 
 	public Palabra(char letra, String definicion, boolean contiene) {
@@ -54,20 +52,12 @@ public class Palabra {
 		this.codigo = codigo;
 	}
 
-	public int getCantidadRespondida() {
-		return cantidadRespondida;
+	public int getCantVecesCorrecta() {
+		return cantVecesCorrecta;
 	}
 
-	public void setCantidadRespondida(int cantidadRespondida) {
-		this.cantidadRespondida = cantidadRespondida;
-	}
-
-	public int getCantidadRespondidaCorrectamente() {
-		return cantidadRespondidaCorrectamente;
-	}
-
-	public void setCantidadRespondidaCorrectamente(int cantidadRespondidaCorrectamente) {
-		this.cantidadRespondidaCorrectamente = cantidadRespondidaCorrectamente;
+	public void setCantVecesCorrecta(int cantVecesCorrecta) {
+		this.cantVecesCorrecta = cantVecesCorrecta;
 	}
 
 	public boolean getContiene() {
@@ -86,12 +76,12 @@ public class Palabra {
 		this.categoria = categoria;
 	}
 
-	public int getFrecuencia() {
-		return frecuencia;
+	public int getCantUsada() {
+		return cantUsada;
 	}
 
-	public void setFrecuencia(int frecuencia) {
-		this.frecuencia = frecuencia;
+	public void setCantUsada(int cantUsada) {
+		this.cantUsada = cantUsada;
 	}
 
 	public String getPalabra() {
@@ -101,5 +91,5 @@ public class Palabra {
 	public void setPalabra(String palabra) {
 		this.palabra = palabra;
 	}
-	 
+
 }

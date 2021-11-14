@@ -4,7 +4,7 @@ public class Usuario {
 
 	private int ci, pin;
 	private String nombre, apellido, mail;
-	
+
 	public Usuario(int ci, String nombre, String apellido, String mail, int pin) {
 		super();
 		this.ci = ci;
@@ -53,5 +53,5 @@ public class Usuario {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-	
+
 }

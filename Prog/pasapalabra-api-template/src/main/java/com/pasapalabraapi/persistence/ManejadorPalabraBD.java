@@ -27,7 +27,7 @@ public class ManejadorPalabraBD {
 		Statement stmt = con.createStatement();
 		
 		// INSERT INTO .... VALUES(48704997,'A','planta grande', true);
-		String insert = "INSERT INTO palabra(letra, definicion, contiene) VALUES('" + palabra.getLetra() + "', '" + palabra.getDefinicion() + "', " + palabra.getContiene() + ";)" ;
+		String insert = "INSERT INTO Palabra(letra, definicion, contiene) VALUES('" + palabra.getLetra() + "', '" + palabra.getDefinicion() + "', " + palabra.getContiene() + ";)" ;
 		
 		stmt.executeUpdate(insert);
 		
@@ -39,7 +39,7 @@ public class ManejadorPalabraBD {
 		Statement stmt = con.createStatement();
 		
 		// INSERT INTO .... VALUES(48704997,'A','planta grande', true);
-		String delete = "DELETE palabra where codigo = " + codigo + ";";
+		String delete = "DELETE Palabra where codigo = " + codigo + ";";
 		
 		// Devuelve cuantos registros elimino (deberia de ser 1)
 		int result = stmt.executeUpdate(delete);
@@ -65,7 +65,7 @@ public class ManejadorPalabraBD {
 		while (rs.next()) {
 			String letra = rs.getString("letra");
 			// Por cada letra, obtenemos su informacion correspondiente
-			String obtenerPalabra = "SELECT * FROM Palabra WHERE letra = '" + letra + "'" + queryCategoria + " order by frecuencia asc limit 1;";
+			String obtenerPalabra = "SELECT * FROM Palabra WHERE letra = '" + letra + "'" + queryCategoria + " order by cantUsada asc limit 1;";
 			ResultSet rsPalabra = stmt.executeQuery(obtenerPalabra);
 			
 			if (rsPalabra.first()) {
@@ -84,11 +84,11 @@ public class ManejadorPalabraBD {
 		palabra.setLetra(rsPalabra.getString("letra").toCharArray()[0]);
 		palabra.setCategoria(rsPalabra.getString("categoria"));
 		palabra.setDefinicion(rsPalabra.getString("definicion"));
-		palabra.setCantidadRespondida(rsPalabra.getInt("cantidadRespondida"));
-		palabra.setCantidadRespondidaCorrectamente(rsPalabra.getInt("cantidadRespondidaCorrectamente"));
+		palabra.setCantUsada(rsPalabra.getInt("cantUsada"));
+		palabra.setCantVecesCorrecta(rsPalabra.getInt("cantVecesCorrecta"));
 		palabra.setPalabra(rsPalabra.getString("palabra"));
+		palabra.setContiene(rsPalabra.getBoolean("contiene"));
 		palabra.setCodigo(rsPalabra.getInt("codigo"));
-		palabra.setFrecuencia(rsPalabra.getInt("frecuencia"));
 		return palabra;
 	}
 
@@ -96,7 +96,7 @@ public class ManejadorPalabraBD {
 		Connection con = ConnectToDb();
 		Statement stmt = con.createStatement();
 		
-			String query = "SELECT * FROM Palabra order by (cantidadRespondida - cantidadRespondidaCorrectamente) desc limit 10;";
+			String query = "SELECT * FROM Palabra order by (cantUsada - cantVecesCorrecta) desc limit 10;";
 			ResultSet rsPalabra = stmt.executeQuery(query);
 			
 			while (rsPalabra.next()) {
