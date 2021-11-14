@@ -12,7 +12,7 @@ public class DBConf {
     private final String DB_NAME = "Infinity"; //NOMBRE DE NUESTRA BASE DE DATOS
 
     // Host
-    private final String HOSTNAME = "localhost";
+    private final String HOSTNAME = "anima-infinity.mysql.database.azure.com";
 
     // Puerto
     public final String PORT = "3306";
@@ -21,10 +21,10 @@ public class DBConf {
     public final String url = "jdbc:mysql://" + HOSTNAME + ":" + PORT + "/" + DB_NAME + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
     // Nombre de usuario
-    public final String USER_NAME = "root";
+    public final String USER_NAME = "infinity@anima-infinity";
 
     // Clave de usuario
-    public final String PASSWORD = "";
+    public final String PASSWORD = "Anima2021";
 
     //LULU - TENES QUE HACER UN USUARIO
    // public String username = "root";

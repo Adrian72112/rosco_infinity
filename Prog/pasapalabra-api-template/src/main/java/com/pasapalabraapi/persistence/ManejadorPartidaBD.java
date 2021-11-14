@@ -12,6 +12,7 @@ import com.pasapalabraapi.logic.Partida;
 
 public class ManejadorPartidaBD {
 	
+	
 	private Connection ConnectToDb() {
 		DBConf dbconf = new DBConf();
 		return dbconf.conectarMySQL();
@@ -38,7 +39,8 @@ public class ManejadorPartidaBD {
 		String query = "SELECT cedula FROM Partida group by cedula order by sum(puntaje) desc limit 10;";
 		ResultSet rsPalabra = stmt.executeQuery(query);
 		
-		return listaPalabras;
+		// TODO no hace nada esto
+		return new ArrayList<Partida>();
 
 	}
 

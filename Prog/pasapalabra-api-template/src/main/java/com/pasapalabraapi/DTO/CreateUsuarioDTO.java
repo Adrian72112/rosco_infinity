@@ -5,13 +5,15 @@ import com.pasapalabraapi.logic.Usuario;
 public class CreateUsuarioDTO {
 	private int ci;
 	private int pin;
-	private Usuario user;
+	private String nombre, apellido, mail;
 	
-	public CreateUsuarioDTO(int ci, int pin, Usuario user) {
+	public CreateUsuarioDTO(int ci, int pin, String nombre, String apellido, String mail) {
 		super();
 		this.ci = ci;
 		this.pin = pin;
-		this.user = user;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.mail = mail;
 	}
 
 	public int getCi() {
@@ -30,12 +32,28 @@ public class CreateUsuarioDTO {
 		this.pin = pin;
 	}
 
-	public Usuario getUser() {
-		return user;
+	public String getApellido() {
+		return apellido;
 	}
 
-	public void setUser(Usuario user) {
-		this.user = user;
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	
 	
