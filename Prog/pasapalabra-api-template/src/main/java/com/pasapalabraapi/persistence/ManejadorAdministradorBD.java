@@ -17,7 +17,7 @@ public class ManejadorAdministradorBD {
 		Statement stmt = con.createStatement();
 		
 		// INSERT INTO .... VALUES(48704997,'Adrian','Tesore','...',1234);
-		String insert = "INSERT INTO usuario(cedula, nombre, apellido, mail, pin) "
+		String insert = "INSERT INTO Usuario(cedula, nombre, apellido, mail, pin) "
 				+ "VALUES(" + admin.getCi() + ",'" + admin.getNombre() + "', '" 
 				+ admin.getApellido() + "', '" + admin.getMail() + "', " + admin.getPin() + ");";
 		
@@ -35,7 +35,7 @@ public class ManejadorAdministradorBD {
 		Connection con = ConnectToDb();
 		Statement stmt = con.createStatement();
 		
-		String delete = "DELETE FROM Administrador WHERE ci = " + ci + " AND pin = '" + pinA + "';";
+		String delete = "DELETE FROM Administrador WHERE cedula = " + ci + " AND pin = '" + pinA + "';";
 		
 		stmt.executeUpdate(delete);
 	}
